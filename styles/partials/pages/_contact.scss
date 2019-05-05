@@ -1,0 +1,49 @@
+// contact style
+.contactHeader {
+  background-image: url('../assets/contact-header.jpg');
+}
+
+.contactForm {
+  padding-top: 50px;
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    margin-bottom: 35px;
+  }
+}
+
+
+
+.contact {
+  background-color: $secondary;
+}
+
+.socialMedia ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+
+  width: 80%;
+
+  li {
+    flex: 1 0 auto;
+    padding: 10px;
+  }
+}
+
+.socialMedia a,
+address p:first-of-type {
+  font-size: 1.3rem;
+  margin: 5px 0;
+}
+
+address {
+  font-style: normal;
+
+  p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+  }
+}

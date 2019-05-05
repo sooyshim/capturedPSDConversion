@@ -1,0 +1,50 @@
+// Typography
+
+html {
+  font-size: 125%; /*20px*/
+}
+
+body {
+  color: $black;
+}
+
+h1,
+h2,
+h3,
+h4, 
+nav,
+a,
+.linkLabel,
+.commentsTitle,
+input[type="submit"]  {
+  font-family: $lgFont;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 2.1rem;
+}
+
+h3,
+.linkLabel {
+  font-size: 1.6rem;
+}
+
+a {
+    color: $black;
+}
+
+p,
+form {
+  font-family: $smFont;
+}
+
+p {
+  line-height: 1.5;
+}
+
+[class*="Title"] {
+  font-size: 1.6rem;
+}

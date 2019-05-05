@@ -1,0 +1,82 @@
+// blog style
+
+.blog {
+  background-color: $secondary;
+  margin: 0 auto;
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+
+.blogHeader {
+  background-image: url('../assets/blog-header.jpg')
+}
+
+.blogHeader h1 {
+  font-size: 4.6rem;
+}
+
+
+
+
+// side bar
+.sideBar {
+  background-color: $white;
+}
+
+.sideBar ul li::before {
+  content: "\2022";
+  color: $primary;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: 0.5em;
+  
+}
+
+// blog post
+.post img {
+  box-shadow: -40px 20px $accent;
+}
+
+// Comments
+
+.comments {
+  margin: 100px 0;
+}
+
+.blog .commentsTitle {
+  font-size: 1.6rem;
+}
+
+.postedComments {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+
+  img {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+// form 
+.commentForm {
+  margin-bottom: 70px;
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}

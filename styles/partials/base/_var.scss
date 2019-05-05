@@ -1,0 +1,48 @@
+// Variables
+
+// Color
+$primary: #4ceea7;
+$secondary: #effdf3;
+$accent: #fdfa69;
+$black: #2c2c2c;
+$white: #fafafa;
+
+// Font Families
+$lgFont: 'Playfair Display', serif;
+$smFont: 'Roboto', sans-serif;
+
+// shadow details
+
+// Variables for media query
+$bp-xs: 320px; //mobile
+$bp-sm: 645px;
+$bp-md: 760px; //tablet
+$bp-lg: 1024px; //desktop
+$bp-xlg: 1400px; //large desktop
+
+// Mixin for media query
+@mixin bp($class) {
+  @if $class == xs {
+    @media (min-width: $bp-xs) { @content; }
+  }
+ 
+  @else if $class == sm {
+    @media (min-width: $bp-sm) { @content; }
+  }
+ 
+  @else if $class == md {
+    @media (min-width: $bp-md) { @content; }
+  }
+ 
+  @else if $class == lg {
+    @media (min-width: $bp-lg) { @content; }
+  }
+
+  @else if $class == xlg {
+    @media (min-width: $bp-xlg) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg, xlg";
+  }
+}

@@ -1,0 +1,56 @@
+// Component styles
+
+// Buttons
+.linkButton {
+  padding: 15px;
+  background: $primary;
+  text-align: center;
+}
+
+.linkButton:hover {
+  box-shadow: 1px 1px darken($primary, 30%);
+  background-color: darken($primary, 20%);
+  color: $white;
+}
+
+.findOutMore {
+  width: 200px;
+}
+
+.readMore {
+  width: 170px;
+}
+
+// Form
+input::placeholder,
+textarea::placeholder {
+  color: $black;
+  margin-bottom: 50px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background:transparent;
+  padding-left: 15px;
+}
+
+input[type="text"],
+input[type="email"] {
+  border: none;
+  border-bottom: 2px solid $primary;
+  padding-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  border: 2px solid $primary;
+  padding-top: 15px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  background-color: $primary;
+}
