@@ -11,7 +11,7 @@
 }
 
 h3 {
-    margin-top: 40px;
+  margin-top: 30px;
 }
 
 // header
@@ -19,14 +19,13 @@ h3 {
   background: url('../assets/header-image.jpg');
   background-position: 40% center;
   overflow: hidden;
-  z-index: 20;
+  // z-index: 20;
 }
 
 .mainHeader .wrapper {
   // display: flex;
   // flex-direction: column;
   // justify-content: space-between;
-  border: 1px solid red;
   position: relative;
 }
 
@@ -42,46 +41,18 @@ h3 {
   }
 
   img {
-    width: 70%;
-    position: relative;
-    top: -150px;
-    right: -200px;
-    border: 30px solid $accent;
+    width: 60%;
+    position: absolute;
+    bottom: -20%;
+    right: 0%;
+    border: 20px solid $accent;
+    border-right: none;
   }
 }  
 
-
-// navigation
-.mainNav {
-  position: relative;
-}
-
-input[class="toggle"] {
-  opacity: 0;
-}
-
-label.toggle { 
-  position: absolute;
-  right:0;
-  top: 0;
-}
-
-.test {
-  opacity: 0.2;
-  width: 100%;
-  background-color: $accent;
-}
-
-input[class="toggle"]:checked + .test {
-  opacity: 1;
-}
-
-
-.mainPage {
-  z-index: -1;
-}
 // about
 .about {
+  padding-top: 100px;
   background-color: $secondary;
 }
 
@@ -92,44 +63,53 @@ input[class="toggle"]:checked + .test {
 
 .feature1 {
   img {
-    box-shadow: 40px 20px 5px $accent;
+    box-shadow: $boxShadowL;
   }
 }
 
 .feature2 img {
-  box-shadow: -40px 20px $accent;
+  box-shadow: $boxShadowR;
 }
 
 // moreInfo 
-
 .infoTitle {
-  border: 1px solid #000;
-  display: flex;
+  display: flex; //Flex container
   align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1.5px;
+
+  &:hover {
+    background-color: $accent;
+    border-radius: 100px;
+  }
 }
 
-.mainPage i {
-  margin-left: 10px;
+.moreInfo i {
+  flex: 1 0 10%; //flex item
   position: relative;
+  text-align: center;
   z-index: 100;
   
   font-size: 1.6rem;
-
+  
   &::after {
     content:'';
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
-    background: $primary;
     transform: translate(-50%, -50%);
+    background: $primary;
     z-index: -1;
   }
 }
 
 .linkLabel{
+  flex: 5 0 80%; //flex item
+  margin-left: 15px;
 }
 
 .info p:last-child {
@@ -138,16 +118,21 @@ input[class="toggle"]:checked + .test {
 }
 
 // banner
-
 .banner {
-  height: 30vh;
+  display: none;
+  height: 25vh;
+  background-image: url('../assets/banner.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 // month profile
 
 .monthlyProfile {
+
   img {
-    box-shadow: 40px 20px $accent;
+    box-shadow: $boxShadowL;
   }
 }
 

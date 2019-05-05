@@ -16,7 +16,51 @@ h1 {
   text-align: center;
 }
 
-// Main page Header
 
+// navigation
+.mainNav {
+  position: relative;
+}
 
-// Navigation
+input[class="toggle"] {
+  opacity: 0;
+}
+
+label.toggle { 
+  border: 1px solid #000;
+  position: absolute;
+  right:0;
+  top: 0;
+  margin-top: 10px;
+
+  i {
+    font-size: 1.7rem;
+  }
+}
+
+.dropDownNav {
+  width: 100%;
+  margin-top: 20px;
+  border: 2px dotted $black;
+  border-bottom: none;
+  position: relative;
+  background-color: $primary;
+  text-align: center;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity $transitionDetails;
+  
+  li {
+    padding: 30px 0;
+    border-bottom: 2px dotted $black;
+    
+    &:hover {
+        background-color: $accent;
+    }
+  }
+
+}
+
+input[class="toggle"]:checked + .dropDownNav {
+  opacity: 1;
+}

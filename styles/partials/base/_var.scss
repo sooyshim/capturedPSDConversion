@@ -12,6 +12,11 @@ $lgFont: 'Playfair Display', serif;
 $smFont: 'Roboto', sans-serif;
 
 // shadow details
+$boxShadowL: 15px 15px $accent;
+$boxShadowR: -15px 15px $accent;
+
+// transition
+$transitionDetails: 0.3s ease-in-out;
 
 // Variables for media query
 $bp-xs: 320px; //mobile

@@ -5,12 +5,12 @@
   padding: 15px;
   background: $primary;
   text-align: center;
-}
 
-.linkButton:hover {
-  box-shadow: 1px 1px darken($primary, 30%);
-  background-color: darken($primary, 20%);
-  color: $white;
+  &:hover {
+    box-shadow: 1.5px 1.5px 5px darken($black, 40%);
+    background-color: $accent;
+    color: $black;
+  }
 }
 
 .findOutMore {
@@ -24,8 +24,9 @@
 // Form
 input::placeholder,
 textarea::placeholder {
-  color: $black;
   margin-bottom: 50px;
+  color: $black;
+  opacity: 1; //firefox fix
 }
 
 input[type="text"],
