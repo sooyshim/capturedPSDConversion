@@ -1,7 +1,8 @@
 {
-  "name": "sooyeonShimProjectTwo",
+  "name": "sooyeonshimprojecttwo",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,18 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/sooyshim/sooyeonShimProjectTwo.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sooyshim/sooyeonShimProjectTwo/issues"
   },
   "homepage": "https://github.com/sooyshim/sooyeonShimProjectTwo#readme",
-  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.26.5",
     "gulp": "^4.0.1",
     "gulp-sass": "^4.0.2"
-  },
-  "description": "Soo's ProjectTwo"
+  }
 }
