@@ -81,6 +81,14 @@
     padding-top: 130px;
   }
 
+  @include bp(lg) {
+    padding: 130px 50px;  
+
+    h2 {
+      text-align: center;
+    }
+  }
+
   p {
     @include bp(sm) {
       padding-bottom: 20px;
@@ -91,17 +99,76 @@
 // features
 .feature {
   margin-bottom: 40px; 
+
+  .wrapper {
+    border: 1px solid #000;
+  }
+
+  @include bp(lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img {
+    @include bp(lg) {
+      flex-basis: 40%;
+    }
+  }
+
+  .featureContent {
+    @include bp(lg) {
+      flex-basis: 40%;
+    }
+  }
 }
 
-.feature1 img { 
+.feature1 {
+  img { 
     @extend %boxShadowL;
+  }
+  
+  .featureContent {
+    @include bp(lg) {
+      margin-left: 10%;
+    }
+  }
 }
 
-.feature2 img {
-  @extend %boxShadowR;
+.feature2 {
+  flex-direction: row-reverse;
+
+  img {
+    @extend %boxShadowR;
+  }
+
+  .featureContent {
+    @include bp(lg) {
+      margin-right: 10%;
+    }
+  }
 }
 
 // moreInfo 
+
+.moreInfo ul {
+  @include bp(lg) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  li {
+    @include bp(lg) {
+      flex-basis: 45%;
+    }
+  }
+
+  li:first-child,
+  li:nth-child(3) {
+    margin-right: 20px;
+  }
+}
+
 .infoTitle {
   display: flex; //Flex container
   align-items: center;
@@ -123,8 +190,8 @@
   
   &::after {
     content:'';
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -136,7 +203,17 @@
 }
 
 .linkLabel{
-  margin-left: 3%;
+  margin-left: 15px;
+
+  @include bp(lg) {
+    margin-left: 30px;
+  }
+}
+
+.info p {
+  @include bp(lg) {
+    margin-left: 65px;
+  }
 }
 
 .info p:last-child {
@@ -147,22 +224,47 @@
 // banner
 .banner {
   display: none;
-  height: 25vh;
   background-image: url('../assets/banner.jpg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @include bp(lg) {
+    display: block;
+  }
 }
 
 // month profile
 
 .monthlyProfile {
+  .wrapper {
+    @include bp(lg) {
+      display: flex;
+      align-items: flex-start;
+      padding: 50px 0;
+    }
+  }
 
   img {
     @extend %boxShadowL;
     width: 70%;
     height: 70%;
     margin: 0 auto;
+
+    @include bp(lg) {
+      flex-basis: 30%;
+      margin-right: 60px;
+    }
+  }
+
+  .profileContent {
+    @include bp(lg) {
+      flex-basis: 70%;
+
+      h3 {
+        margin-top: 0;
+      }
+    }
   }
 }
 
@@ -170,7 +272,11 @@
 .galleryContainer {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin: 50px auto;
+
+  @include bp(lg) {
+    margin: 100px auto;
+  }
 }
 
 .item1,
@@ -178,10 +284,27 @@
   flex: 1 0 50%;
 }
 
+.item1,
+.item2,
+.item3 {
+  @include bp(lg) {
+    flex: 1 0 30%;
+  }
+}
+
 .item1 {
+  margin-right: 10px;
+}
+
+.item2 {
   margin-right: 10px;
 }
 
 .item3 {
   display: none;
+
+  @include bp(lg) {
+    display: block;
+  }
 }
+

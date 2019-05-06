@@ -72,6 +72,14 @@ label.toggle {
     opacity: 1;
   }
 
+  @include bp(md) {
+    width: 60%;
+  }
+
+  @include bp(lg) {
+    width: 50%;
+  }
+
   li {
     padding: 30px 0;
     border-bottom: 2px dotted $black;
@@ -99,10 +107,6 @@ label.toggle {
     }
   }  
 }
-
-li:hover::after {}
-  
-
 
 
 input[class="toggle"]:checked + .dropDownNav {

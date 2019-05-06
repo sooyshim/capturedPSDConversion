@@ -11,21 +11,40 @@
     left: 0;
     width: 100%;
     font-size: 3.0rem;
+
+    @include bp(md) {
+      font-size: 4.0rem;
+    }
+  }
+}
+
+.contact {
+  background-color: $secondary;
+
+  padding-top: 30px;
+
+  @include bp(lg) {
+    padding: 0;
   }
 }
 
 .contactForm {
-  padding-top: 50px;
+  padding: 50px;
+  border: 30px solid $accent;
+  border-top: none;
+  border-right: none;
+  background-color: $white;
+
+  @include bp(lg) {
+    position: relative;
+    top: -150px;
+  }
 
   input[type="text"],
   input[type="email"],
   textarea {
     margin-bottom: 35px;
   }
-}
-
-.contact {
-  background-color: $secondary;
 }
 
 .socialMedia ul {
@@ -62,4 +81,26 @@ address {
     margin-bottom: 0;
     padding-bottom: 30px;
   }
+}
+
+// flex 
+
+.contact {
+  .wrapper {
+    @include bp(lg) {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  aside {
+    flex-basis: 35%;
+    margin-right: 20px;
+  }
+
+  .contactForm {
+    flex-basis: 65%;
+  }
+
+  
 }

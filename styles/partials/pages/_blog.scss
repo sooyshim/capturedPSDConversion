@@ -15,6 +15,8 @@
 
 .blogHeader {
   background-image: url('../assets/blog-header.jpg');
+  background-position: center center;
+  background-size: cover;
   position: relative;
 }
 
@@ -52,9 +54,15 @@ label.sideToggle {
   
   display: block;
 
+  @include bp(lg) {
+    display: none;
+    padding: 0;
+  }
+
   i {
     text-shadow: 0.5px 0.5px px $black;
   }
+
 }
 
 .sideBarPopUp {
@@ -75,8 +83,25 @@ label.sideToggle {
     margin: 0 100px;
     transform: translateX(-130%);
   }
+
+  @include bp(lg) {
+    margin: 0;
+    padding: 0;
+    transform: translateX(0);
+    position: static;
+
+    img {
+      position: relative;
+      left: -30px;
+    }
+
+    .sideBarContent {
+      padding: 20px 10px;
+    }
+  }
 }
 
+// Toggle effect
 input.sideToggle:checked + .sideBarPopUp {
   transform: translateX(0);
   position: static;
@@ -99,6 +124,14 @@ input.sideToggle:checked + label {
 }
 
 // blog post
+
+.blogPost {
+  @include bp(lg) {
+   position: relative;
+   top: -150px;
+  }
+}
+
 .post {
   border-left: 3px solid $accent;
   border-bottom: 3px solid $accent;
@@ -107,12 +140,14 @@ input.sideToggle:checked + label {
   p {
     padding-left: 10px;
   }
+
 }
+
 .post .imgContainer {
   background-color: $accent;
 
   img {
-    transform:translate(5%, -10%);
+    transform:translate(6%, -10%);
   }
 }
 
@@ -146,12 +181,33 @@ input.sideToggle:checked + label {
 
 // form 
 .commentForm {
-  margin-bottom: 70px;
+  // margin-bottom: 70px;
 
   input[type="text"],
   input[type="email"],
   textarea {
     width: 100%;
     margin-bottom: 40px;
+  }
+}
+
+// media query
+
+.flexContainer {
+  @include bp(lg) {
+    display: flex;
+  }
+
+  aside {
+    @include bp(lg) {
+      flex-basis: 50%;
+      margin-left: 20px;
+    }
+  }
+
+  .post {
+    @include bp(lg) {
+      flex-basis: 50%;
+    }
   }
 }
