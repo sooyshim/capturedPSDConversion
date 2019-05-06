@@ -148,7 +148,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   background-color: #fdfa69;
   color: #2c2c2c; }
 
-.blogHeader h1, .contactHeader h1 {
+.blogHeader h1 {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -324,28 +324,30 @@ h3 {
 .mainHeader {
   background: url("../assets/header-image.jpg");
   background-position: 40% center;
-  overflow: hidden; }
-
-.mainHeader .wrapper {
   position: relative; }
+  .mainHeader h1 {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 2.6rem; }
 
-.mainHeader h1 {
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  font-size: 2.6rem; }
-
-.mainHeader img {
-  width: 60%;
-  position: absolute;
-  bottom: -20%;
-  right: 0%;
+.decoImgContainer {
+  padding-top: 55%;
+  width: 50%;
   border: 20px solid #fdfa69;
-  border-right: none; }
+  border-right: none;
+  background: url("../assets/header-box-image.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: -15%; }
 
 .about {
+  position: static;
   padding-top: 100px;
   background-color: #effdf3; }
 
@@ -479,8 +481,17 @@ input.sideToggle:checked + label {
   width: 1em;
   margin-left: 0.5em; }
 
-.post img {
-  box-shadow: -40px 20px #fdfa69; }
+.post {
+  border-left: 3px solid #fdfa69;
+  border-bottom: 3px solid #fdfa69; }
+  .post h2,
+  .post p {
+    padding-left: 10px; }
+
+.post .imgContainer {
+  background-color: #fdfa69; }
+  .post .imgContainer img {
+    transform: translate(15px, -20px); }
 
 .comments {
   margin: 100px 0; }
@@ -510,9 +521,16 @@ input.sideToggle:checked + label {
     margin-bottom: 40px; }
 
 .contactHeader {
-  background-image: url("../assets/contact-header.jpg"); }
+  background-image: url("../assets/contact-header.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: relative; }
   .contactHeader h1 {
-    width: 100%; }
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    font-size: 3.0rem; }
 
 .contactForm {
   padding-top: 50px; }

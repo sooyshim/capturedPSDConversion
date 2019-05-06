@@ -1,10 +1,16 @@
 // contact style
 .contactHeader {
   background-image: url('../assets/contact-header.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
 
   h1 {
-    @extend %centerElement;
+    position:absolute;
+    top: 30%;
+    left: 0;
     width: 100%;
+    font-size: 3.0rem;
   }
 }
 

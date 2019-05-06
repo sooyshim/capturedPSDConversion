@@ -18,18 +18,8 @@ h3 {
 .mainHeader {
   background: url('../assets/header-image.jpg');
   background-position: 40% center;
-  overflow: hidden;
-  // z-index: 20;
-}
-
-.mainHeader .wrapper {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
   position: relative;
-}
 
-.mainHeader {
   h1 {
     position: absolute;
     top: 80%;
@@ -38,20 +28,30 @@ h3 {
 
     z-index: 10;
     font-size: 2.6rem;
-  }
 
-  img {
-    width: 60%;
-    position: absolute;
-    bottom: -20%;
-    right: 0%;
-    border: 20px solid $accent;
-    border-right: none;
+    @media bp($sm) {
+      font-size: 3.0rem;
+    }
   }
 }  
 
+.decoImgContainer {
+  padding-top: 55%;
+  width: 50%;
+  border: 20px solid $accent;
+  border-right: none;
+  background: url('../assets/header-box-image.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  bottom: -15%;
+}
+
 // about
 .about {
+  position: static;
   padding-top: 100px;
   background-color: $secondary;
 }

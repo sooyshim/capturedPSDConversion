@@ -84,8 +84,21 @@ input.sideToggle:checked + label {
 }
 
 // blog post
-.post img {
-  box-shadow: -40px 20px $accent;
+.post {
+  border-left: 3px solid $accent;
+  border-bottom: 3px solid $accent;
+
+  h2,
+  p {
+    padding-left: 10px;
+  }
+}
+.post .imgContainer {
+  background-color: $accent;
+
+  img {
+    transform:translate(15px, -20px);
+  }
 }
 
 // Comments

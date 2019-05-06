@@ -18,14 +18,6 @@ $boxShadowR: -15px 15px $accent;
 // transition
 $transitionDetails: 0.3s ease-in-out;
 
-// Variables for media query
-$bp-xs: 320px; //mobile
-$bp-sm: 645px;
-$bp-md: 760px; //tablet
-$bp-lg: 1024px; //desktop
-$bp-xlg: 1400px; //large desktop
-
-
 // Extend
 %hover {
   box-shadow: 1.5px 1.5px 5px darken($black, 40%);
@@ -39,6 +31,15 @@ $bp-xlg: 1400px; //large desktop
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+// Variables for media query
+$bp-xs: 320px; //mobile
+$bp-sm: 645px;
+$bp-md: 760px; //tablet
+$bp-lg: 1024px; //desktop
+$bp-xlg: 1400px; //large desktop
+
 
 // Mixin for media query
 @mixin bp($class) {
