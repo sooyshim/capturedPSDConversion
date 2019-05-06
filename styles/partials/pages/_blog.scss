@@ -6,9 +6,12 @@
 
   p {
     font-size: 0.9rem;
+
+    @include bp(sm) {
+      font-size: 1.0rem;
+    }
   }
 }
-
 
 .blogHeader {
   background-image: url('../assets/blog-header.jpg');
@@ -23,9 +26,13 @@
 
 // side bar
 .sideBar {
-  background-color: $white;
+  padding: 10px 0 30px;
+  background-color: $secondary;
   position: relative;
 
+  @include bp(sm) {
+    padding: 30px 0 70px;
+  }
 }
 
 input.sideToggle {
@@ -33,8 +40,8 @@ input.sideToggle {
 }
 
 label.sideToggle {
-  margin: 10px auto;
-  padding: 5px;
+  margin: 0 auto;
+  padding: 10px;
   width: 100%;
   background-color: $primary;
   font-size: 1.3rem;
@@ -51,14 +58,22 @@ label.sideToggle {
 }
 
 .sideBarPopUp {
-  padding: 40px 0;
+  padding: 40px 10px;
   transform: translateX(-110%);
-  background-color: $secondary;
+  background-color: $white;
   position: absolute;
 
   a {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 3px;
+    font-family: $smFont;
+    text-transform: none;
+    font-weight: bold;
+  }
+
+  @include bp(sm) {
+    margin: 0 100px;
+    transform: translateX(-130%);
   }
 }
 
@@ -97,7 +112,7 @@ input.sideToggle:checked + label {
   background-color: $accent;
 
   img {
-    transform:translate(15px, -20px);
+    transform:translate(5%, -10%);
   }
 }
 

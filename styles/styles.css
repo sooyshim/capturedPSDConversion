@@ -154,6 +154,18 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   top: 50%;
   transform: translate(-50%, -50%); }
 
+.feature1 img, .monthlyProfile img {
+  box-shadow: 15px 15px #fdfa69; }
+  @media (min-width: 645px) {
+    .feature1 img, .monthlyProfile img {
+      box-shadow: 30px 30px #fdfa69; } }
+
+.feature2 img {
+  box-shadow: -15px 15px #fdfa69; }
+  @media (min-width: 645px) {
+    .feature2 img {
+      box-shadow: -30px 30px #fdfa69; } }
+
 ul {
   list-style: none;
   margin: 0;
@@ -215,13 +227,17 @@ p {
 [class*="Title"] {
   font-size: 1.6rem; }
 
+.sideBarPopUp li {
+  font-family: "Roboto", sans-serif; }
+
 .linkButton {
   padding: 15px;
   background: #4ceea7;
   text-align: center; }
 
 .findOutMore {
-  width: 200px; }
+  width: 200px;
+  margin: 0 auto; }
 
 .readMore {
   width: 170px; }
@@ -317,9 +333,17 @@ footer p {
 .monthlyProfile {
   padding: 20px 0 50px;
   background: #effdf3; }
+  @media (min-width: 645px) {
+    .about,
+    .moreInfo,
+    .monthlyProfile {
+      padding: 30px 0 70px; } }
 
 h3 {
   margin-top: 30px; }
+  @media (min-width: 645px) {
+    h3 {
+      margin-top: 50px; } }
 
 .mainHeader {
   background: url("../assets/header-image.jpg");
@@ -332,10 +356,13 @@ h3 {
     transform: translate(-50%, -50%);
     z-index: 10;
     font-size: 2.6rem; }
+    @media (min-width: 645px) {
+      .mainHeader h1 {
+        font-size: 4.0rem; } }
 
 .decoImgContainer {
-  padding-top: 55%;
-  width: 50%;
+  padding-top: 45%;
+  width: 45%;
   border: 20px solid #fdfa69;
   border-right: none;
   background: url("../assets/header-box-image.jpg");
@@ -345,25 +372,23 @@ h3 {
   position: absolute;
   right: 0;
   bottom: -15%; }
+  @media (min-width: 645px) {
+    .decoImgContainer {
+      bottom: -30%; } }
 
 .about {
-  position: static;
-  padding-top: 100px;
+  padding-top: 25%;
   background-color: #effdf3; }
+  @media (min-width: 645px) {
+    .about {
+      padding-top: 30%; } }
 
 .feature {
   margin-bottom: 40px; }
 
-.feature1 img {
-  box-shadow: 15px 15px #fdfa69; }
-
-.feature2 img {
-  box-shadow: -15px 15px #fdfa69; }
-
 .infoTitle {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   cursor: pointer;
   padding: 1.5px; }
   .infoTitle:hover {
@@ -371,7 +396,6 @@ h3 {
     border-radius: 100px; }
 
 .moreInfo i {
-  flex: 1 0 10%;
   position: relative;
   text-align: center;
   z-index: 100;
@@ -389,8 +413,7 @@ h3 {
     z-index: -1; }
 
 .linkLabel {
-  flex: 5 0 80%;
-  margin-left: 15px; }
+  margin-left: 3%; }
 
 .info p:last-child {
   font-style: normal;
@@ -405,7 +428,9 @@ h3 {
   background-repeat: no-repeat; }
 
 .monthlyProfile img {
-  box-shadow: 15px 15px #fdfa69; }
+  width: 70%;
+  height: 70%;
+  margin: 0 auto; }
 
 .galleryContainer {
   display: flex;
@@ -427,6 +452,9 @@ h3 {
   margin: 0 auto; }
   .blog p {
     font-size: 0.9rem; }
+    @media (min-width: 645px) {
+      .blog p {
+        font-size: 1.0rem; } }
 
 .blogHeader {
   background-image: url("../assets/blog-header.jpg");
@@ -437,15 +465,19 @@ h3 {
   font-size: 4.6rem; }
 
 .sideBar {
-  background-color: #fafafa;
+  padding: 10px 0 30px;
+  background-color: #effdf3;
   position: relative; }
+  @media (min-width: 645px) {
+    .sideBar {
+      padding: 30px 0 70px; } }
 
 input.sideToggle {
   opacity: 0; }
 
 label.sideToggle {
-  margin: 10px auto;
-  padding: 5px;
+  margin: 0 auto;
+  padding: 10px;
   width: 100%;
   background-color: #4ceea7;
   font-size: 1.3rem;
@@ -458,13 +490,20 @@ label.sideToggle {
     text-shadow: 0.5px 0.5px px #2c2c2c; }
 
 .sideBarPopUp {
-  padding: 40px 0;
+  padding: 40px 10px;
   transform: translateX(-110%);
-  background-color: #effdf3;
+  background-color: #fafafa;
   position: absolute; }
   .sideBarPopUp a {
     display: inline-block;
-    margin-left: 5px; }
+    margin-left: 3px;
+    font-family: "Roboto", sans-serif;
+    text-transform: none;
+    font-weight: bold; }
+  @media (min-width: 645px) {
+    .sideBarPopUp {
+      margin: 0 100px;
+      transform: translateX(-130%); } }
 
 input.sideToggle:checked + .sideBarPopUp {
   transform: translateX(0);
@@ -491,7 +530,7 @@ input.sideToggle:checked + label {
 .post .imgContainer {
   background-color: #fdfa69; }
   .post .imgContainer img {
-    transform: translate(15px, -20px); }
+    transform: translate(5%, -10%); }
 
 .comments {
   margin: 100px 0; }

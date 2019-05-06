@@ -11,26 +11,8 @@ $white: #fafafa;
 $lgFont: 'Playfair Display', serif;
 $smFont: 'Roboto', sans-serif;
 
-// shadow details
-$boxShadowL: 15px 15px $accent;
-$boxShadowR: -15px 15px $accent;
-
 // transition
 $transitionDetails: 0.3s ease-in-out;
-
-// Extend
-%hover {
-  box-shadow: 1.5px 1.5px 5px darken($black, 40%);
-  background-color: $accent;
-  color: $black;
-}
-
-%centerElement {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
 
 
 // Variables for media query
@@ -65,5 +47,35 @@ $bp-xlg: 1400px; //large desktop
 
   @else {
     @warn "Breakpoint mixin supports: xs, sm, md, lg, xlg";
+  }
+}
+
+// Extend
+%hover {
+  box-shadow: 1.5px 1.5px 5px darken($black, 40%);
+  background-color: $accent;
+  color: $black;
+}
+
+%centerElement {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+%boxShadowL {
+  box-shadow: 15px 15px $accent;
+
+  @include bp(sm) {
+    box-shadow: 30px 30px $accent;
+  }
+}
+
+%boxShadowR {
+  box-shadow: -15px 15px $accent;
+
+  @include bp(sm) {
+    box-shadow: -30px 30px $accent;
   }
 }
