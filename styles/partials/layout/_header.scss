@@ -14,16 +14,26 @@ header .wrapper {
 
 h1 {
   text-align: center;
-}
 
+}
 
 // navigation
 .mainNav {
   position: relative;
+
+  @include bp(sm) {
+    position: static;
+    display: flex; //flex container
+    justify-content: flex-end;
+  }
 }
 
 input[class="toggle"] {
   opacity: 0;
+
+  @include bp(sm) {
+    display: none;
+  }
 }
 
 label.toggle { 
@@ -35,6 +45,10 @@ label.toggle {
 
   i {
     font-size: 1.7rem;
+  }
+
+  @include bp(sm) {
+    display: none;
   }
 }
 
@@ -50,17 +64,53 @@ label.toggle {
   opacity: 0;
   transition: opacity $transitionDetails;
   
+  @include bp(sm) {
+    width: 75%;
+    display: flex; //flex container
+    border: none;
+    background-color: transparent;
+    opacity: 1;
+  }
+
   li {
     padding: 30px 0;
     border-bottom: 2px dotted $black;
     
-    &:hover {
-        background-color: $accent;
+    @include bp(sm) {
+      border: none ;
+      flex: 1 0 25%; //flex item of ul.dropdown nav
     }
-  }
 
+    &:hover {
+      background-color: $accent;
+
+      @include bp(sm) {
+        background-color: transparent;
+        position: relative;
+
+        &::after {
+          content:'.';
+          width: 0px;
+          height: 1px;
+          color: $primary;
+          text-align: center;
+        }
+      }
+    }
+  }  
 }
+
+li:hover::after {}
+  
+
+
 
 input[class="toggle"]:checked + .dropDownNav {
   opacity: 1;
+
+  @include bp(sm) {
+    opacity: 0;
+    display: none;
+  }
 }
+

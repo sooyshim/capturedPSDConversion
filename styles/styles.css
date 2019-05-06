@@ -286,9 +286,17 @@ h1 {
 
 .mainNav {
   position: relative; }
+  @media (min-width: 645px) {
+    .mainNav {
+      position: static;
+      display: flex;
+      justify-content: flex-end; } }
 
 input[class="toggle"] {
   opacity: 0; }
+  @media (min-width: 645px) {
+    input[class="toggle"] {
+      display: none; } }
 
 label.toggle {
   border: 1px solid #000;
@@ -298,6 +306,9 @@ label.toggle {
   margin-top: 10px; }
   label.toggle i {
     font-size: 1.7rem; }
+  @media (min-width: 645px) {
+    label.toggle {
+      display: none; } }
 
 .dropDownNav {
   width: 100%;
@@ -310,14 +321,39 @@ label.toggle {
   z-index: 100;
   opacity: 0;
   transition: opacity 0.3s ease-in-out; }
+  @media (min-width: 645px) {
+    .dropDownNav {
+      width: 75%;
+      display: flex;
+      border: none;
+      background-color: transparent;
+      opacity: 1; } }
   .dropDownNav li {
     padding: 30px 0;
     border-bottom: 2px dotted #2c2c2c; }
+    @media (min-width: 645px) {
+      .dropDownNav li {
+        border: none;
+        flex: 1 0 25%; } }
     .dropDownNav li:hover {
       background-color: #fdfa69; }
+      @media (min-width: 645px) {
+        .dropDownNav li:hover {
+          background-color: transparent;
+          position: relative; }
+          .dropDownNav li:hover::after {
+            content: '.';
+            width: 0px;
+            height: 1px;
+            color: #4ceea7;
+            text-align: center; } }
 
 input[class="toggle"]:checked + .dropDownNav {
   opacity: 1; }
+  @media (min-width: 645px) {
+    input[class="toggle"]:checked + .dropDownNav {
+      opacity: 0;
+      display: none; } }
 
 footer {
   background: #2c2c2c;
@@ -339,15 +375,17 @@ footer p {
     .monthlyProfile {
       padding: 30px 0 70px; } }
 
-h3 {
+.mainPage h3 {
   margin-top: 30px; }
   @media (min-width: 645px) {
-    h3 {
+    .mainPage h3 {
       margin-top: 50px; } }
 
 .mainHeader {
   background: url("../assets/header-image.jpg");
   background-position: 40% center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative; }
   .mainHeader h1 {
     position: absolute;
@@ -358,7 +396,12 @@ h3 {
     font-size: 2.6rem; }
     @media (min-width: 645px) {
       .mainHeader h1 {
+        top: 75%;
         font-size: 4.0rem; } }
+    @media (min-width: 760px) {
+      .mainHeader h1 {
+        top: 70%;
+        font-size: 5.0rem; } }
 
 .decoImgContainer {
   padding-top: 45%;
@@ -367,21 +410,25 @@ h3 {
   border-right: none;
   background: url("../assets/header-box-image.jpg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 0% 0%;
   background-size: cover;
   position: absolute;
   right: 0;
-  bottom: -15%; }
+  bottom: -7%; }
   @media (min-width: 645px) {
     .decoImgContainer {
-      bottom: -30%; } }
+      bottom: -20%;
+      background-position: 0% 0%; } }
 
 .about {
-  padding-top: 25%;
+  padding-top: 40px;
   background-color: #effdf3; }
   @media (min-width: 645px) {
     .about {
-      padding-top: 30%; } }
+      padding-top: 130px; } }
+  @media (min-width: 645px) {
+    .about p {
+      padding-bottom: 20px; } }
 
 .feature {
   margin-bottom: 40px; }

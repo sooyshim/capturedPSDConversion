@@ -14,11 +14,13 @@
   }
 }
 
-h3 {
-  margin-top: 30px;
+.mainPage {
+  h3 {
+    margin-top: 30px;
 
-  @include bp(sm) {
-    margin-top: 50px;
+    @include bp(sm) {
+      margin-top: 50px;
+    }
   }
 }
 
@@ -26,6 +28,8 @@ h3 {
 .mainHeader {
   background: url('../assets/header-image.jpg');
   background-position: 40% center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
 
   h1 {
@@ -38,7 +42,13 @@ h3 {
     font-size: 2.6rem;
 
     @include bp(sm) {
+      top: 75%;
       font-size: 4.0rem;
+    }
+
+    @include bp(md) {
+      top: 70%;
+      font-size: 5.0rem;
     }
   }
 }  
@@ -50,24 +60,31 @@ h3 {
   border-right: none;
   background: url('../assets/header-box-image.jpg');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 0% 0%;
   background-size: cover;
   position: absolute;
   right: 0;
-  bottom: -15%;
+  bottom: -7%;
 
   @include bp(sm) {
-    bottom: -30%;
+    bottom: -20%;
+    background-position: 0% 0%;
   }
-}
+ }
 
 // about
 .about {
-  padding-top: 25%;
+  padding-top: 40px;
   background-color: $secondary;
 
   @include bp(sm) {
-    padding-top: 30%;
+    padding-top: 130px;
+  }
+
+  p {
+    @include bp(sm) {
+      padding-bottom: 20px;
+    }
   }
 }
 
