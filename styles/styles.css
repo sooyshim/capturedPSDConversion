@@ -143,6 +143,17 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   clip: rect(0 0 0);
   overflow: hidden; }
 
+.linkButton:hover, input[type="submit"]:hover {
+  box-shadow: 1.5px 1.5px 5px black;
+  background-color: #fdfa69;
+  color: #2c2c2c; }
+
+.blogHeader h1, .contactHeader h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
 ul {
   list-style: none;
   margin: 0;
@@ -208,10 +219,6 @@ p {
   padding: 15px;
   background: #4ceea7;
   text-align: center; }
-  .linkButton:hover {
-    box-shadow: 1.5px 1.5px 5px black;
-    background-color: #fdfa69;
-    color: #2c2c2c; }
 
 .findOutMore {
   width: 200px; }
@@ -420,15 +427,51 @@ h3 {
     font-size: 0.9rem; }
 
 .blogHeader {
-  background-image: url("../assets/blog-header.jpg"); }
+  background-image: url("../assets/blog-header.jpg");
+  position: relative; }
 
 .blogHeader h1 {
+  margin: 0 auto;
   font-size: 4.6rem; }
 
 .sideBar {
-  background-color: #fafafa; }
+  background-color: #fafafa;
+  position: relative; }
 
-.sideBar ul li::before {
+input.sideToggle {
+  opacity: 0; }
+
+label.sideToggle {
+  margin: 10px auto;
+  padding: 5px;
+  width: 100%;
+  background-color: #4ceea7;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  color: #2c2c2c;
+  display: block; }
+  label.sideToggle i {
+    text-shadow: 0.5px 0.5px px #2c2c2c; }
+
+.sideBarPopUp {
+  padding: 40px 0;
+  transform: translateX(-110%);
+  background-color: #effdf3;
+  position: absolute; }
+  .sideBarPopUp a {
+    display: inline-block;
+    margin-left: 5px; }
+
+input.sideToggle:checked + .sideBarPopUp {
+  transform: translateX(0);
+  position: static; }
+
+input.sideToggle:checked + label {
+  display: none; }
+
+.sideBarPopUp li::before {
   content: "\2022";
   color: #4ceea7;
   font-weight: bold;
@@ -468,6 +511,8 @@ h3 {
 
 .contactHeader {
   background-image: url("../assets/contact-header.jpg"); }
+  .contactHeader h1 {
+    width: 100%; }
 
 .contactForm {
   padding-top: 50px; }
@@ -487,7 +532,12 @@ h3 {
   width: 80%; }
   .socialMedia ul li {
     flex: 1 0 auto;
-    padding: 10px; }
+    padding: 10px;
+    transition: all 0.3s ease-in-out; }
+    .socialMedia ul li:hover a {
+      color: #4ceea7;
+      text-shadow: 1px 1px 1px #2c2c2c;
+      transform: scale(1.2); }
 
 .socialMedia a,
 address p:first-of-type {

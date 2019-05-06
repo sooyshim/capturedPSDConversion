@@ -11,29 +11,76 @@
 
 
 .blogHeader {
-  background-image: url('../assets/blog-header.jpg')
+  background-image: url('../assets/blog-header.jpg');
+  position: relative;
 }
 
 .blogHeader h1 {
+  @extend %centerElement;
+  margin: 0 auto;
   font-size: 4.6rem;
 }
-
-
-
 
 // side bar
 .sideBar {
   background-color: $white;
+  position: relative;
+
 }
 
-.sideBar ul li::before {
+input.sideToggle {
+  opacity: 0;
+}
+
+label.sideToggle {
+  margin: 10px auto;
+  padding: 5px;
+  width: 100%;
+  background-color: $primary;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-family: $lgFont;
+  text-align: center;
+  color: $black;
+  
+  display: block;
+
+  i {
+    text-shadow: 0.5px 0.5px px $black;
+  }
+}
+
+.sideBarPopUp {
+  padding: 40px 0;
+  transform: translateX(-110%);
+  background-color: $secondary;
+  position: absolute;
+
+  a {
+    display: inline-block;
+    margin-left: 5px;
+  }
+}
+
+input.sideToggle:checked + .sideBarPopUp {
+  transform: translateX(0);
+  position: static;
+}
+
+input.sideToggle:checked + label {
+  display: none;
+}
+
+//SideBar style
+//bullet style
+
+.sideBarPopUp li::before {
   content: "\2022";
   color: $primary;
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: 0.5em;
-  
 }
 
 // blog post

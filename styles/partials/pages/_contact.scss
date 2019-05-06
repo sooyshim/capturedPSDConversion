@@ -1,6 +1,11 @@
 // contact style
 .contactHeader {
   background-image: url('../assets/contact-header.jpg');
+
+  h1 {
+    @extend %centerElement;
+    width: 100%;
+  }
 }
 
 .contactForm {
@@ -28,6 +33,13 @@
   li {
     flex: 1 0 auto;
     padding: 10px;
+    transition: all $transitionDetails;
+
+    &:hover a {
+      color: $primary;
+      text-shadow: 1px 1px 1px $black;
+      transform: scale(1.2);
+    }
   }
 }
 

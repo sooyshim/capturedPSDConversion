@@ -17,7 +17,7 @@
         <i class="fas fa-bars" aria-hidden="true"></i>
       </label>
       <input type="checkbox" id="toggle" name="toggle" class="toggle">
-      <ul>
+      <ul class="dropDownNav">
         <li>
           <a href="index.html">home</a>
         </li>
@@ -36,17 +36,26 @@
   </header>
   <main class="blog">
     <aside class="sideBar">
-      <!-- decorative img: alt is blank -->
-      <img src="./assets/side-blog-image.jpg" alt="">
-      <h4>About Captured</h4>
-      <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum. <a href="index.html">Find out more.</a></p>
-      <h4>Recent Posts</h4>
-      <ul>
-        <li>Donec facilisis tortor ut</li>
-        <li>Augue lacinia at viverra</li>
-        <li>Semper sed sapien metus</li>
-        <li>Scelerisque nec pharetra id</li>
-      </ul>
+      <div class="wrapper">
+        <label for="sideToggle" class="sideToggle"> 
+          Find out more
+          <i class="fas fa-caret-square-down" aria-hidden="true"></i>
+        </label>
+        <input type="checkbox" id="sideToggle" name="sideToggle" class="sideToggle">
+        <div class="sideBarPopUp">
+          <!-- decorative img: alt is blank -->
+          <img src="./assets/side-blog-image.jpg" alt="">
+          <h4>About Captured</h4>
+          <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum. <a href="index.html">Find out more.</a></p>
+          <h4>Recent Posts</h4>
+          <ul>
+            <li>Donec facilisis tortor ut</li>
+            <li>Augue lacinia at viverra</li>
+            <li>Semper sed sapien metus</li>
+            <li>Scelerisque nec pharetra id</li>
+          </ul>
+        </div>
+      </div>
     </aside>
     <section class="blogPost">
       <div class="wrapper">

@@ -25,6 +25,21 @@ $bp-md: 760px; //tablet
 $bp-lg: 1024px; //desktop
 $bp-xlg: 1400px; //large desktop
 
+
+// Extend
+%hover {
+  box-shadow: 1.5px 1.5px 5px darken($black, 40%);
+  background-color: $accent;
+  color: $black;
+}
+
+%centerElement {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // Mixin for media query
 @mixin bp($class) {
   @if $class == xs {
