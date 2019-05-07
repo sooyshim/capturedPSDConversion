@@ -110,7 +110,6 @@
 // features section styles
 .feature {
   margin-bottom: 40px; 
-
   @include bp(lg) {
     padding-bottom: 30px;
   }
@@ -124,9 +123,12 @@
     }
   }
 
-  img {
+  .test {
+    // background-color: $accent;
     @include bp(lg) {
       flex-basis: 50%;
+      border: 1px solid #000;
+      position: relative;
     }
   }
 
@@ -138,16 +140,28 @@
 }
 
 .feature1 {
+
+  .anotherThing {
+    width: 50vw;
+    position: absolute;
+    right: 0;
+  //   left: calc((50% - ((90% - 70px) / 2)) * -1);
+  }
+
   img { 
-    @extend %boxShadowL;
+    // @extend %boxShadowL;
 
     @include bp(lg) {
-      position: relative;
+      position: absolute;
       top: -30px;
+      // left: -10%;
+      // display: none;
+      // left: 0;
     }
   }
 
   .featureContent {
+    border: 1px solid #000;
     @include bp(lg) {
       margin-left: 70px;
     }
@@ -161,16 +175,26 @@
     }
   }
 
+  .anotherThing {
+    width: 50vw;
+    position: absolute;
+    left: 0;
+  //   left: calc((50% - ((90% - 70px) / 2)) * -1);
+  }
+
   img {
     @extend %boxShadowR;
+    // flex-basis: 50%;
 
     @include bp(lg) {
-      position: relative;
-      bottom: -90px;
+      position: absolute;
+      bottom: -50px;
+      // right: calc((50% - ((90% - 70px) / 2)) * -1);
     }
   }
 
   .featureContent {
+    border: 1px solid #000;
     margin-right: 70px;
   }
 }
@@ -206,7 +230,13 @@
   }
 }
 
-//info link title style (icon + text)
+// vertical flexbox 
+.moreInfo a {
+  display: flex;
+  flex-direction: column;
+}
+
+//info link title style (icon + label)
 .infoTitle {
   border: 1px solid #000;
   display: flex; //Flex container
@@ -226,6 +256,8 @@
 
 //icon style
 .moreInfo i {
+  width: 25px;
+  height: 25px;
   position: relative;
   text-align: center;
   z-index: 100;
@@ -247,16 +279,18 @@
   }
 }
 
+//Camera icon with a different size
 .moreInfo li:first-child i {
   font-size: 1.6rem;
+
+  &::after {
+    transform: translate(-43%, -43%);
+  }
 }
 
+// link label style
 .linkLabel{
-  margin-left: 15px;
-
-  @include bp(lg) {
-    // margin-left: 30px;
-  }
+  margin-left: 30px;
 }
 
 .info p {
@@ -269,6 +303,8 @@
   font-style: normal;
   margin-bottom: 50px; 
 }
+
+
 
 // banner styles
 .banner {

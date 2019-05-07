@@ -154,10 +154,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   top: 50%;
   transform: translate(-50%, -50%); }
 
-.feature1 img, .monthlyProfile img {
+.monthlyProfile img {
   box-shadow: 15px 15px #fdfa69; }
   @media (min-width: 645px) {
-    .feature1 img, .monthlyProfile img {
+    .monthlyProfile img {
       box-shadow: 30px 30px #fdfa69; } }
 
 .feature2 img {
@@ -485,31 +485,46 @@ footer p {
         display: flex;
         justify-content: space-between; } }
   @media (min-width: 960px) {
-    .feature img {
-      flex-basis: 50%; } }
+    .feature .test {
+      flex-basis: 50%;
+      border: 1px solid #000;
+      position: relative; } }
   @media (min-width: 960px) {
     .feature .featureContent {
       flex-basis: 50%; } }
 
-@media (min-width: 960px) {
-  .feature1 img {
-    position: relative;
-    top: -30px; } }
+.feature1 .anotherThing {
+  width: 50vw;
+  position: absolute;
+  right: 0; }
 
 @media (min-width: 960px) {
-  .feature1 .featureContent {
-    margin-left: 70px; } }
+  .feature1 img {
+    position: absolute;
+    top: -30px; } }
+
+.feature1 .featureContent {
+  border: 1px solid #000; }
+  @media (min-width: 960px) {
+    .feature1 .featureContent {
+      margin-left: 70px; } }
 
 @media (min-width: 960px) {
   .feature2 .wrapper {
     flex-direction: row-reverse; } }
 
+.feature2 .anotherThing {
+  width: 50vw;
+  position: absolute;
+  left: 0; }
+
 @media (min-width: 960px) {
   .feature2 img {
-    position: relative;
-    bottom: -90px; } }
+    position: absolute;
+    bottom: -50px; } }
 
 .feature2 .featureContent {
+  border: 1px solid #000;
   margin-right: 70px; }
 
 .moreInfo .wrapper {
@@ -533,6 +548,10 @@ footer p {
 .moreInfo ul li:nth-child(3) {
   margin-right: 20px; }
 
+.moreInfo a {
+  display: flex;
+  flex-direction: column; }
+
 .infoTitle {
   border: 1px solid #000;
   display: flex;
@@ -547,6 +566,8 @@ footer p {
       margin-left: 7px; } }
 
 .moreInfo i {
+  width: 25px;
+  height: 25px;
   position: relative;
   text-align: center;
   z-index: 100;
@@ -565,9 +586,11 @@ footer p {
 
 .moreInfo li:first-child i {
   font-size: 1.6rem; }
+  .moreInfo li:first-child i::after {
+    transform: translate(-43%, -43%); }
 
 .linkLabel {
-  margin-left: 15px; }
+  margin-left: 30px; }
 
 @media (min-width: 960px) {
   .info p {
@@ -737,7 +760,7 @@ label.sideToggle {
       width: 85%;
       margin-left: 50px;
       margin-top: 50px; }
-      .sideBarPopUp .full-width {
+      .sideBarPopUp .fullWidth {
         width: 35vw;
         position: relative;
         left: 50%;
