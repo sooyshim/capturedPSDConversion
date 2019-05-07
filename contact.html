@@ -17,7 +17,7 @@
         <i class="fas fa-bars" aria-hidden="true"></i>
       </label>
       <input type="checkbox" id="toggle" name="toggle" class="toggle">
-      <ul class="dropDownNav">
+      <ul class="navList">
         <li>
           <a href="index.html">home</a>
         </li>
@@ -37,16 +37,18 @@
   <main class="contact">
     <div class="wrapper">
       <form action="" class="contactForm">
-        <label for="name" class="visuallyHidden">Enter name</label>
-        <input type="text" id="name" name="name" placeholder="Name" required>
+        <div class="contactContainer">
+          <label for="name" class="visuallyHidden">Enter name</label>
+          <input type="text" id="name" name="name" placeholder="Name" required>
+        
+          <label for="email" class="visuallyHidden">Enter email address</label>
+          <input type="email" id="email" name="email" placeholder="Email Address" required>
+        </div>
       
-        <label for="email" class="visuallyHidden">Enter email address</label>
-        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <label for="messageText" class="visuallyHidden">Enter message</label>
+        <textarea name="messageText" id="messageText" cols="30" rows="10" placeholder="Message" required></textarea>
       
-        <label for="commentText" class="visuallyHidden">Enter message</label>
-        <textarea name="commentText" id="commentText" cols="30" rows="10" placeholder="Message" required></textarea>
-      
-        <input type="submit" value="post comment">
+        <input type="submit" value="submit">
       </form>
       <aside>
         <nav class="socialMedia">

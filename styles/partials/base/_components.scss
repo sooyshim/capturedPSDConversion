@@ -20,7 +20,8 @@
   width: 170px;
 }
 
-// Form
+
+// Form styles
 input::placeholder,
 textarea::placeholder {
   margin-bottom: 50px;
@@ -40,12 +41,20 @@ input[type="email"] {
   border: none;
   border-bottom: 2px solid $primary;
   padding-bottom: 15px;
+
+  @include bp(xlg) {
+    padding: 0 0 20px 20px;
+  }
 }
 
 textarea {
   width: 100%;
   border: 2px solid $primary;
   padding-top: 15px;
+
+  @include bp(xlg) {
+    padding: 20px 0 0 20px;
+  }
 }
 
 input[type="submit"] {

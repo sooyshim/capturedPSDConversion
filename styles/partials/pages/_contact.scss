@@ -1,8 +1,10 @@
-// contact style
+// contact styles
+
+//header styles
 .contactHeader {
   background-image: url('../assets/contact-header.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: 30% center;
   position: relative;
 
   h1 {
@@ -18,6 +20,7 @@
   }
 }
 
+// main styles
 .contact {
   background-color: $secondary;
 
@@ -28,6 +31,8 @@
   }
 }
 
+//form styles
+// For general form styles, go to components.scss
 .contactForm {
   padding: 50px;
   border: 30px solid $accent;
@@ -47,17 +52,37 @@
   }
 }
 
+//name & email flex box
+.contactContainer {
+  @include bp(xlg) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    flex-basis: 45%;
+  }
+}
+
+//aside: socialMedia & contact styles
+
+//social media links
 .socialMedia ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 50px;
 
-  width: 80%;
+  width: 70%;
+
+  //media query
+  @include bp(lg) {
+    width: 50%;
+  }
 
   li {
     flex: 1 0 auto;
-    padding: 10px;
     transition: all $transitionDetails;
 
     &:hover a {
@@ -68,10 +93,18 @@
   }
 }
 
+// address style
 .socialMedia a,
 address p:first-of-type {
+  border: 1px solid #000;
   font-size: 1.3rem;
   margin: 5px 0;
+}
+
+address p:first-of-type {
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  font-family: $lgFont;
 }
 
 address {
@@ -83,8 +116,7 @@ address {
   }
 }
 
-// flex 
-
+// layout flex media query
 .contact {
   .wrapper {
     @include bp(lg) {
@@ -101,6 +133,4 @@ address {
   .contactForm {
     flex-basis: 65%;
   }
-
-  
 }

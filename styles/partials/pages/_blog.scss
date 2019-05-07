@@ -15,7 +15,7 @@
 
 .blogHeader {
   background-image: url('../assets/blog-header.jpg');
-  background-position: center center;
+  background-position: 30% center;
   background-size: cover;
   position: relative;
 }
@@ -35,8 +35,12 @@
   @include bp(sm) {
     padding: 30px 0 70px;
   }
+
+  @include bp(lg) {
+  }
 }
 
+//Toggle side bar style
 input.sideToggle {
   opacity: 0;
 }
@@ -65,6 +69,7 @@ label.sideToggle {
 
 }
 
+//sideBar content style
 .sideBarPopUp {
   padding: 40px 10px;
   transform: translateX(-110%);
@@ -92,13 +97,38 @@ label.sideToggle {
 
     img {
       position: relative;
+      top: -20px;
       left: -30px;
     }
 
     .sideBarContent {
-      padding: 20px 10px;
+      padding: 0 15px 40px;
     }
   }
+
+  @include bp(xlg) {
+    width: 85%;
+    margin-left: 50px;
+    margin-top: 50px;
+
+    .full-width {
+      //push the viewport to the middle and manage the content by negative margin
+      width: 35vw;
+      position: relative;
+      left: 50%;
+      margin-left: -20vw;
+      top: -15px;
+    }
+
+    h4:first-child {
+      margin-top: 0;
+      
+      & + p {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
 }
 
 // Toggle effect
@@ -111,20 +141,17 @@ input.sideToggle:checked + label {
   display: none;
 }
 
-//SideBar style
 //bullet style
-
 .sideBarPopUp li::before {
   content: "\2022";
   color: $primary;
   font-weight: bold;
   display: inline-block;
-  width: 1em;
+  width: 1.5em;
   margin-left: 0.5em;
 }
 
 // blog post
-
 .blogPost {
   @include bp(lg) {
    position: relative;
@@ -139,6 +166,14 @@ input.sideToggle:checked + label {
   h2,
   p {
     padding-left: 10px;
+
+    @include bp(lg) {
+      padding-left: 30px;
+    }
+
+    @include bp(xlg) {
+      padding-left: 50px;
+    }
   }
 
 }
@@ -152,7 +187,6 @@ input.sideToggle:checked + label {
 }
 
 // Comments
-
 .comments {
   margin: 100px 0;
 }
@@ -191,8 +225,7 @@ input.sideToggle:checked + label {
   }
 }
 
-// media query
-
+// flexbox layout for media query
 .flexContainer {
   @include bp(lg) {
     display: flex;
@@ -200,14 +233,16 @@ input.sideToggle:checked + label {
 
   aside {
     @include bp(lg) {
-      flex-basis: 50%;
-      margin-left: 20px;
+      flex-basis: 60%;
+      margin-left: 30px;
     }
+
   }
 
   .post {
     @include bp(lg) {
-      flex-basis: 50%;
+      flex-basis: 40%;
+      margin-left: 30px;
     }
   }
 }

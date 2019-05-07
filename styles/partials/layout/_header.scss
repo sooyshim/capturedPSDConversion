@@ -1,5 +1,6 @@
 // Header styles
 
+//general styles
 .mainHeader,
 .blogHeader,
 .contactHeader {
@@ -17,7 +18,7 @@ h1 {
 
 }
 
-// navigation
+// navigation styles
 .mainNav {
   position: relative;
 
@@ -52,7 +53,8 @@ label.toggle {
   }
 }
 
-.dropDownNav {
+//drop down nav styles
+.navList {
   width: 100%;
   margin-top: 20px;
   border: 2px dotted $black;
@@ -62,22 +64,29 @@ label.toggle {
   text-align: center;
   z-index: 100;
   opacity: 0;
-  transition: opacity $transitionDetails;
+  transition: all $transitionDetails;
   
   @include bp(sm) {
     width: 75%;
-    display: flex; //flex container
     border: none;
+    display: flex; //flex container
+    justify-content: flex-end;
     background-color: transparent;
     opacity: 1;
   }
 
   @include bp(md) {
+    border: 1px solid #000;
     width: 60%;
   }
 
   @include bp(lg) {
     width: 50%;
+  }
+
+  @include bp(xxl) {
+    width: 40%;
+    transform: translateX(-20%);
   }
 
   li {
@@ -86,7 +95,7 @@ label.toggle {
     
     @include bp(sm) {
       border: none ;
-      flex: 1 0 25%; //flex item of ul.dropdown nav
+      flex: 1 0 25%; //flex item of ul.navList
     }
 
     &:hover {
@@ -108,8 +117,8 @@ label.toggle {
   }  
 }
 
-
-input[class="toggle"]:checked + .dropDownNav {
+//toggle effect styles
+input[class="toggle"]:checked + .navList {
   opacity: 1;
 
   @include bp(sm) {
