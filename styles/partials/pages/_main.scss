@@ -74,7 +74,7 @@
   }
   
   @include bp(lg) {
-    // bottom: -30%;
+    bottom: -30%;
     border: 40px solid $accent;
     border-right: none;
   }
@@ -90,14 +90,14 @@
     padding-top: 130px;
   }
 
+  @include bp(lg) {
+    padding: 200px 50px;  
+  }
+
   p {
     @include bp(sm) {
       padding-bottom: 20px;
     }
-  }
-
-  @include bp(lg) {
-    padding: 150px 50px;  
   }
 
   h2 {
@@ -115,55 +115,53 @@
   }
 
   .wrapper {
-    border: 1px solid #000;
-    
+
     @include bp(lg) {
       display: flex;
       justify-content: space-between;
     }
   }
 
-  .test {
-    // background-color: $accent;
-    @include bp(lg) {
-      flex-basis: 50%;
-      border: 1px solid #000;
-      position: relative;
-    }
+  .imgContainer {
+    flex-basis: 47%;
   }
-
   .featureContent {
     @include bp(lg) {
-      flex-basis: 50%;
+      flex-basis: 46%;
     }
   }
 }
 
 .feature1 {
-
-  .anotherThing {
-    width: 50vw;
-    position: absolute;
-    right: 0;
-  //   left: calc((50% - ((90% - 70px) / 2)) * -1);
-  }
-
-  img { 
-    // @extend %boxShadowL;
+  .imgContainer { 
+    background-image: url('../assets/left-image.jpg');
+    @extend %boxShadowL;
+    height: 250px;
+    width: 100%;
+    margin-top: 50px;
+    
+    @include bp(md) {
+      height: 350px;;
+    }
 
     @include bp(lg) {
-      position: absolute;
-      top: -30px;
-      // left: -10%;
-      // display: none;
-      // left: 0;
+      width: 50%;
+      height: auto;
+      position: relative;
+      left: -5.65%;
+      top: -80px;
     }
   }
-
+  
   .featureContent {
-    border: 1px solid #000;
+    
     @include bp(lg) {
       margin-left: 70px;
+      padding-left: 20px;
+    }
+    
+    @include bp(xlg) {
+      padding: 50px 27px;
     }
   }
 }
@@ -174,36 +172,43 @@
       flex-direction: row-reverse;
     }
   }
-
-  .anotherThing {
-    width: 50vw;
-    position: absolute;
-    left: 0;
-  //   left: calc((50% - ((90% - 70px) / 2)) * -1);
-  }
-
-  img {
+  
+  .imgContainer {
     @extend %boxShadowR;
-    // flex-basis: 50%;
+    background-image: url('../assets/right-image.jpg');
+    height: 250px;
+    width: 100%;
+    margin-top: 50px;
 
+    @include bp(md) {
+      height: 350px;;
+    }
+    
     @include bp(lg) {
-      position: absolute;
-      bottom: -50px;
-      // right: calc((50% - ((90% - 70px) / 2)) * -1);
+      width: 50%;
+      height: auto;
+      position: relative;
+      right: -5.65%;
+      flex-basis: 50%;
+      bottom: -90px;
     }
   }
 
   .featureContent {
-    border: 1px solid #000;
     margin-right: 70px;
+
+    @include bp(lg) {
+      padding-right: 20px;
+    }
+
+    @include bp(xlg) {
+      padding: 50px 27px;
+    }
   }
 }
 
 // moreInfo section styles
 .moreInfo {
-  .wrapper {
-    border: 1px solid #000;
-  }
 
   @include bp(lg) {
     padding-top: 100px;
@@ -238,7 +243,6 @@
 
 //info link title style (icon + label)
 .infoTitle {
-  border: 1px solid #000;
   display: flex; //Flex container
   align-items: center;
   cursor: pointer;
@@ -294,6 +298,10 @@
 }
 
 .info p {
+  @include bp(md) {
+    margin-left: 50px;
+  }
+
   @include bp(lg) {
     margin-left: 65px;
   }

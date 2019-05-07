@@ -52,11 +52,19 @@
               <h4>About Captured</h4>
               <p>Nam dapibus nisl vitae elit fringilla rutrum. Aenean sollicitudin, erat a elementum. <a href="index.html">Find out more.</a></p>
               <h4>Recent Posts</h4>
-              <ul>
-                <li>Donec facilisis tortor ut</li>
-                <li>Augue lacinia at viverra</li>
-                <li>Semper sed sapien metus</li>
-                <li>Scelerisque nec pharetra id</li>
+              <ul class="recentPosts">
+                <li>
+                  <a href="#">Donec facilisis tortor ut</a>
+                </li>
+                <li>
+                  <a href="#">Augue lacinia at viverra</a>
+                </li>
+                <li>
+                  <a href="#">Semper sed sapien metus</a>
+                </li>
+                <li>
+                  <a href="#">Scelerisque nec pharetra id</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -102,12 +110,15 @@
             <label for="commentText" class="visuallyHidden">Enter comment</label>
             <textarea name="commentText" id="commentText" cols="30" rows="10" placeholder="Comment" required></textarea>
 
-            <input type="submit" value="post comment">
+            <label for="postComment" class="visuallyHidden">Post comment</label>
+            <input type="submit" id="postComment" value="post comment">
           </form>
         </div>
       </section>
     </div>
   </main>
-  <footer></footer>
+  <footer>
+    <p>Copyright &copy; 2018 HackerYou</p>
+  </footer>
 </body>
 </html>

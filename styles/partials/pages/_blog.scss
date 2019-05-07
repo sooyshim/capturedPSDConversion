@@ -77,12 +77,16 @@ label.sideToggle {
   background-color: $white;
   position: absolute;
 
-  a {
+  a[href="index.html"] {
     display: inline-block;
     margin-left: 3px;
     font-family: $smFont;
     text-transform: none;
     font-weight: bold;
+
+    &:hover {
+      color: darken($primary, 30%);
+    }
   }
 
   @include bp(sm) {
@@ -103,7 +107,7 @@ label.sideToggle {
     }
 
     .sideBarContent {
-      padding: 0 15px 40px;
+      padding: 0 10px 40px;
     }
   }
 
@@ -132,6 +136,18 @@ label.sideToggle {
 
 }
 
+.recentPosts a {
+  font-family: $smFont;
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+  display: inline;
+
+  &:hover {
+    color: darken($primary, 30%);
+  }
+}
+
 // Toggle effect
 input.sideToggle:checked + .sideBarPopUp {
   transform: translateX(0);
@@ -148,8 +164,8 @@ input.sideToggle:checked + label {
   color: $primary;
   font-weight: bold;
   display: inline-block;
-  width: 1.5em;
-  margin-left: 0.5em;
+  width: 1.0em;
+  margin-left: 0.3em;
 }
 
 // blog post
@@ -167,6 +183,10 @@ input.sideToggle:checked + label {
   h2,
   p {
     padding-left: 10px;
+
+    @include bp(sm) {
+      padding-left: 20px;
+    }
 
     @include bp(lg) {
       padding-left: 30px;
@@ -223,6 +243,10 @@ input.sideToggle:checked + label {
   textarea {
     width: 100%;
     margin-bottom: 40px;
+  }
+
+  input[type="submit"] {
+    margin-bottom: 100px;
   }
 }
 

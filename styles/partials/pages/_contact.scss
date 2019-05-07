@@ -35,15 +35,23 @@
 //form styles
 // For general form styles, go to components.scss
 .contactForm {
-  padding: 50px;
-  border: 30px solid $accent;
+  border: 20px solid $accent;
   border-top: none;
   border-right: none;
+  padding: 20px 20px 20px 10px;
   background-color: $white;
 
   @include bp(lg) {
+    padding: 15px;
+    border: 30px solid $accent;
+    border-top: none;
+    border-right: none; 
     position: relative;
     top: -150px;
+  }
+
+  @include bp(xlg) {
+    padding: 50px;
   }
 
   input[type="text"],
@@ -55,14 +63,16 @@
 
 //name & email flex box
 .contactContainer {
-  @include bp(xlg) {
+  @include bp(sm) {
     display: flex;
     justify-content: space-between;
   }
 
   input[type="text"],
   input[type="email"] {
-    flex-basis: 45%;
+    @include bp(sm) {
+      flex-basis: 45%;
+    }
   }
 }
 
@@ -78,7 +88,7 @@
   width: 70%;
 
   //media query
-  @include bp(lg) {
+  @include bp(sm) {
     width: 50%;
   }
 
@@ -97,7 +107,6 @@
 // address style
 .socialMedia a,
 address p:first-of-type {
-  border: 1px solid #000;
   font-size: 1.3rem;
   margin: 5px 0;
 }
@@ -117,21 +126,35 @@ address {
   }
 }
 
+.emailAddress:hover {
+  color: $primary;
+  text-shadow: 2px 1px 1px $black;
+}
+
 // layout flex media query
 .contact {
   .wrapper {
+    border: 1px solid #000;
     @include bp(lg) {
       display: flex;
       flex-direction: row-reverse;
+      justify-content: space-between;
     }
   }
 
   aside {
-    flex-basis: 35%;
-    margin-right: 20px;
+    @include bp(lg) {
+      flex-basis: 30%;
+    }
   }
 
   .contactForm {
-    flex-basis: 65%;
+    @include bp(lg) {
+      flex-basis: 60%;
+    }
+
+    @include bp(xlg) {
+      flex-basis: 70%;
+    }
   }
 }

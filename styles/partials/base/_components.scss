@@ -38,6 +38,7 @@ textarea {
 
 input[type="text"],
 input[type="email"] {
+  width: 100%;
   border: none;
   border-bottom: 2px solid $primary;
   padding-bottom: 15px;

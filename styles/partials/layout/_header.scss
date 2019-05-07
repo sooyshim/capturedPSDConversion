@@ -75,7 +75,6 @@ label.toggle {
   }
 
   @include bp(md) {
-    border: 1px solid #000;
     width: 60%;
   }
 
@@ -108,7 +107,7 @@ label.toggle {
     }
   }
 
-  @include bp(lg) {
+  @include bp(sm) {
     a {
       position: relative;
     }
@@ -132,7 +131,6 @@ label.toggle {
     }
   }
 } 
-
 
 //toggle effect styles
 input[class="toggle"]:checked + .navList {
