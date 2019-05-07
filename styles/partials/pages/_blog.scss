@@ -1,5 +1,7 @@
-// blog style
+// blog page styles
 
+//------------------------------------------------------------
+//general styles
 .blog {
   background-color: $secondary;
   margin: 0 auto;
@@ -13,11 +15,13 @@
   }
 }
 
+//------------------------------------------------------------
+// header styles
 .blogHeader {
+  position: relative;
   background-image: url('../assets/blogHeader.jpg');
   background-position: 30% center;
-  background-size: cover;
-  position: relative;
+  @extend %bgDetails;
 }
 
 .blogHeader h1 {
@@ -27,21 +31,22 @@
   line-height: 4.6rem;
 }
 
-// side bar
+//------------------------------------------------------------
+// side bar (aside) styles
+
 .sideBar {
+  position: relative;
   padding: 10px 0 30px;
   background-color: $secondary;
-  position: relative;
 
+  //media query
   @include bp(sm) {
     padding: 30px 0 70px;
   }
-
-  @include bp(lg) {
-  }
 }
 
-//Toggle side bar style
+//Toggle set-up styles
+// checkbox & label
 input.sideToggle {
   opacity: 0;
 }
@@ -59,6 +64,7 @@ label.sideToggle {
   
   display: block;
 
+  //media query
   @include bp(lg) {
     display: none;
     padding: 0;
@@ -70,25 +76,14 @@ label.sideToggle {
 
 }
 
-//sideBar content style
+//side bar content style
 .sideBarPopUp {
+  position: absolute;
   padding: 40px 10px;
   transform: translateX(-110%);
   background-color: $white;
-  position: absolute;
 
-  a[href="index.html"] {
-    display: inline-block;
-    margin-left: 3px;
-    font-family: $smFont;
-    text-transform: none;
-    font-weight: bold;
-
-    &:hover {
-      color: darken($primary, 30%);
-    }
-  }
-
+  //media query
   @include bp(sm) {
     margin: 0 100px;
     transform: translateX(-130%);
@@ -125,6 +120,7 @@ label.sideToggle {
       top: -15px;
     }
 
+    //content1: about captured styles
     h4:first-child {
       margin-top: 0;
       
@@ -133,29 +129,36 @@ label.sideToggle {
       }
     }
   }
-
 }
 
-.recentPosts a {
-  font-family: $smFont;
-  text-transform: none;
-  font-weight: normal;
-  font-style: normal;
-  display: inline;
+//find out more link
+a[href="index.html"] {
+  display: inline-block;
+  margin-left: 3px;
+  font-family: $lgFont;
 
   &:hover {
     color: darken($primary, 30%);
   }
 }
 
-// Toggle effect
+// content2: recent posts styles
+.recentPosts a {
+  display: inline-block;
+  font-family: $smFont;
+  text-transform: none;
+  font-weight: normal;
+  font-style: normal;
+
+  &:hover {
+    color: darken($primary, 30%);
+  }
+}
+
+// side bar: toggle effect
 input.sideToggle:checked + .sideBarPopUp {
   transform: translateX(0);
   position: static;
-}
-
-input.sideToggle:checked + label {
-  display: none;
 }
 
 //bullet style
@@ -168,14 +171,44 @@ input.sideToggle:checked + label {
   margin-left: 0.3em;
 }
 
+//------------------------------------------------------------
+
+// flex box layout for media query
+
+//flex container
+.blogFlexContainer {
+  @include bp(lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  //flex item1: side bar
+  .sideBar {
+    @include bp(lg) {
+      flex-basis: 35%;
+      margin-left: 30px;
+    }
+  }
+
+  // flex item2: blog post
+  .blogPost {
+    @include bp(lg) {
+      flex-basis: 65%;
+      margin-left: 30px;
+    }
+  }
+}
 // blog post
 .blogPost {
+  //media query
   @include bp(lg) {
    position: relative;
    top: -150px;
   }
 }
 
+
+//blog post content
 .post {
   border-left: 3px solid $accent;
   border-bottom: 3px solid $accent;
@@ -184,6 +217,7 @@ input.sideToggle:checked + label {
   p {
     padding-left: 10px;
 
+    //media query
     @include bp(sm) {
       padding-left: 20px;
     }
@@ -199,6 +233,7 @@ input.sideToggle:checked + label {
 
 }
 
+//blog post image
 .post .imgContainer {
   background-color: $accent;
 
@@ -207,6 +242,7 @@ input.sideToggle:checked + label {
   }
 }
 
+//------------------------------------------------------------
 // Comments
 .comments {
   margin: 100px 0;
@@ -217,10 +253,11 @@ input.sideToggle:checked + label {
 }
 
 .postedComments {
+  //flex container
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: nowrap;
   margin-bottom: 50px;
 
   img {
@@ -234,10 +271,12 @@ input.sideToggle:checked + label {
   }
 }
 
-// form 
-.commentForm {
-  // margin-bottom: 70px;
+// form styles
+// for general form styles, go to components.scss
 
+.commentForm {
+
+  //name & email
   input[type="text"],
   input[type="email"],
   textarea {
@@ -245,29 +284,9 @@ input.sideToggle:checked + label {
     margin-bottom: 40px;
   }
 
+  //submit button
   input[type="submit"] {
     margin-bottom: 100px;
   }
 }
 
-// flexbox layout for media query
-.flexContainer {
-  @include bp(lg) {
-    display: flex;
-  }
-
-  aside {
-    @include bp(lg) {
-      flex-basis: 60%;
-      margin-left: 30px;
-    }
-
-  }
-
-  .post {
-    @include bp(lg) {
-      flex-basis: 40%;
-      margin-left: 30px;
-    }
-  }
-}

@@ -1,10 +1,15 @@
 // Component styles
+// Buttons
+// Forms
 
+//------------------------------------------------------------
 // Buttons
 .linkButton {
   padding: 15px;
   background: $primary;
   text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
 
   &:hover {
     @extend %hover;
@@ -12,15 +17,15 @@
 }
 
 .findOutMore {
-  width: 200px;
+  width: 320px;
   margin: 0 auto;
 }
 
 .readMore {
-  width: 170px;
+  width: 270px;
 }
 
-
+//------------------------------------------------------------
 // Form styles
 input::placeholder,
 textarea::placeholder {

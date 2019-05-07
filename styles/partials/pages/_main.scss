@@ -1,6 +1,9 @@
-// Main page styles
+// main page styles
 
+//------------------------------------------------------------
 // general styles
+
+//section padding & bgc
 .about,
 .moreInfo,
 .monthlyProfile {
@@ -12,6 +15,7 @@
   }
 }
 
+// heading styles
 .mainPage {
   h3 {
     margin-top: 30px;
@@ -22,24 +26,24 @@
   }
 }
 
+//------------------------------------------------------------
 // header styles
 // nav is styled in the header.scss
 .mainHeader {
+  position: relative;
   background: url('../assets/headerImage.jpg');
   background-position: 40% center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  @extend %bgDetails;
 
   h1 {
     position: absolute;
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     z-index: 10;
     font-size: 2.6rem;
 
+    //media query
     @include bp(sm) {
       top: 75%;
       font-size: 4.0rem;
@@ -49,26 +53,36 @@
       top: 70%;
       font-size: 5.0rem;
     }
+
+    @include bp(lg) {
+      font-size: 6.0rem;
+    }
+    
+    @include bp(xlg) {
+      font-size: 6.9rem;
+    }
   }
 }  
 
 //deco image on the right
 .decoImgContainer {
-  padding-top: 45%;
   width: 45%;
+  padding-top: 45%;
   border: 20px solid $accent;
   border-right: none;
-  background: url('../assets/headerBoxImage.jpg');
-  background-repeat: no-repeat;
-  background-position: 0% 0%;
-  background-size: cover;
+
   position: absolute;
   right: 0;
   bottom: -7%;
 
+  background: url('../assets/headerBoxImage.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 100%;
+  
+  //media query
   @include bp(sm) {
     bottom: -20%;
-    background-position: 0% 0%;
     border: 30px solid $accent;
     border-right: none;
   }
@@ -78,28 +92,31 @@
     border: 40px solid $accent;
     border-right: none;
   }
-
  }
 
+ //------------------------------------------------------------
 // about section styles
 .about {
   padding-top: 40px;
   background-color: $secondary;
 
+  //media query
   @include bp(sm) {
     padding-top: 130px;
   }
 
   @include bp(lg) {
-    padding: 200px 50px;  
+    padding: 250px 50px;  
   }
 
+  //p tag media query
   p {
     @include bp(sm) {
       padding-bottom: 20px;
     }
   }
 
+  //h2 media query
   h2 {
     @include bp(lg) {      
       text-align: center;
@@ -107,24 +124,46 @@
   }
 }
 
+//------------------------------------------------------------
 // features section styles
 .feature {
   margin-bottom: 40px; 
+
+  //media query
   @include bp(lg) {
     padding-bottom: 30px;
   }
 
+  //wrapper media query
+  //flex container
   .wrapper {
-
     @include bp(lg) {
       display: flex;
       justify-content: space-between;
     }
   }
 
+  //flex item1: imgContainer
   .imgContainer {
-    flex-basis: 47%;
+    height: 250px;
+    width: 100%;
+    margin-top: 50px;
+    @extend %bgDetails;
+
+    //media query
+    @include bp(md) {
+      height: 350px;;
+    }
+
+    @include bp(lg) {
+      position: relative;
+      flex-basis: 47%;
+      width: 50%;
+      height: auto;
+    }
   }
+
+  //flex item2: content
   .featureContent {
     @include bp(lg) {
       flex-basis: 46%;
@@ -132,29 +171,22 @@
   }
 }
 
+// feature1 (top part of features section)
 .feature1 {
-  .imgContainer { 
+  //imgContainer: media query
+  .imgContainer {   
     background-image: url('../assets/leftImage.jpg');
-    @extend %boxShadowL;
-    height: 250px;
-    width: 100%;
-    margin-top: 50px;
+    @extend %boxShadowR;
     
-    @include bp(md) {
-      height: 350px;;
-    }
-
+    //media query
     @include bp(lg) {
-      width: 50%;
-      height: auto;
-      position: relative;
       left: -5.65%;
       top: -80px;
     }
   }
   
+  //content: media query
   .featureContent {
-    
     @include bp(lg) {
       margin-left: 70px;
       padding-left: 20px;
@@ -166,36 +198,29 @@
   }
 }
 
+// feature2 (bottom part of features section)
 .feature2 {
+  //wrapper media query
   .wrapper {
     @include bp(lg) {
       flex-direction: row-reverse;
     }
   }
   
+  //imgContainer: media query
   .imgContainer {
-    @extend %boxShadowR;
-    background-image: url('../assets/rightImage.jpg');
-    height: 250px;
-    width: 100%;
+    @extend %boxShadowL;
     margin-top: 50px;
-
-    @include bp(md) {
-      height: 350px;;
-    }
+    background-image: url('../assets/rightImage.jpg');
     
-    @include bp(lg) {
-      width: 50%;
-      height: auto;
-      position: relative;
+    @include bp(lg) {    
       right: -5.65%;
-      flex-basis: 50%;
       bottom: -90px;
     }
   }
 
+  //content: media query
   .featureContent {
-    margin-right: 70px;
 
     @include bp(lg) {
       padding-right: 20px;
@@ -207,62 +232,74 @@
   }
 }
 
+//------------------------------------------------------------
 // moreInfo section styles
 .moreInfo {
 
+  //media query
   @include bp(lg) {
     padding-top: 100px;
   }
 }
 
-//more info flex layout 
+//more info flex box layout 
 .moreInfo ul {
+  //flex container
+  //media query
   @include bp(lg) {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
+  //flex items
   li {
     @include bp(lg) {
       flex-basis: 45%;
     }
   }
+}
+
+.moreInfo ul {
 
   li:first-child,
   li:nth-child(3) {
     margin-right: 20px;
   }
+
 }
 
-// vertical flexbox 
+// vertical flex box: info Title & info Content
 .moreInfo a {
+  //flex container
   display: flex;
   flex-direction: column;
 }
 
-//info link title style (icon + label)
+//info link title style: icon + label
 .infoTitle {
-  display: flex; //Flex container
+  //flex container
+  display: flex; 
   align-items: center;
-  cursor: pointer;
   padding: 1.5px;
+  cursor: pointer;
 
   &:hover {
-    background-color: $accent;
     border-radius: 100px;
+    background-color: $accent;
   }
 
+  //media query
   @include bp(lg) {
     margin-left: 7px;
   }
 }
 
-//icon style
+//icon style 
 .moreInfo i {
+  position: relative;
   width: 25px;
   height: 25px;
-  position: relative;
   text-align: center;
   z-index: 100;
   
@@ -273,12 +310,12 @@
     content:'';
     width: 50px;
     height: 50px;
-    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 50%;
     background: $primary;
+    transform: translate(-50%, -50%);
     z-index: -1;
   }
 }
@@ -297,7 +334,12 @@
   margin-left: 30px;
 }
 
+// text content style
 .info p {
+  margin-bottom: 50px; 
+  font-style: normal;
+
+  //media query
   @include bp(md) {
     margin-left: 50px;
   }
@@ -307,30 +349,27 @@
   }
 }
 
-.info p:last-child {
-  font-style: normal;
-  margin-bottom: 50px; 
-}
-
-
-
+//------------------------------------------------------------
 // banner styles
 .banner {
   display: none;
   background-image: url('../assets/banner.jpg');
   background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  @extend %bgDetails;
 
+  //media query
   @include bp(lg) {
     display: block;
   }
 }
 
+//------------------------------------------------------------
 // month profile styles
 
 .monthlyProfile {
   .wrapper {
+    //media query
+    //flex box
     @include bp(lg) {
       display: flex;
       align-items: flex-start;
@@ -338,6 +377,8 @@
     }
   }
 
+  //img media query
+  //flex item1
   img {
     @extend %boxShadowL;
     width: 70%;
@@ -354,30 +395,39 @@
     }
   }
 
+  //flex item2
+  //media query
   .profileContent {
     @include bp(lg) {
       flex-basis: 70%;
+      //flex container
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
-      h3 {
-        margin-top: 0;
-      }
-
-      a {
-        margin: 0;
-      }
     }
 
     @include bp(xlg) {
       flex-basis: 80%;
     }
+
+    h3 {
+      @include bp(lg) {
+        margin-top: 0;
+      }
+    }
+
+    a {
+      @include bp(lg) {
+        margin: 0;
+      }
+    }   
   }
 }
 
+//------------------------------------------------------------
 // gallery styles
 .galleryContainer {
+  //flex container
   display: flex;
   justify-content: space-between;
   margin: 50px auto;
@@ -387,11 +437,13 @@
   }
 }
 
+//flex items: xs screen
 .item1,
 .item2 {
   flex: 1 0 50%;
 }
 
+//flex items: lg screen
 .item1,
 .item2,
 .item3 {
@@ -400,6 +452,7 @@
   }
 }
 
+//flex-item 1 & 2 margin
 .item1,
 .item2 {
   margin-right: 10px;
@@ -413,7 +466,7 @@
   }
 }
 
-
+//flex item3 media query
 .item3 {
   display: none;
 

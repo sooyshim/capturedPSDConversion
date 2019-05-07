@@ -1,6 +1,6 @@
-// Variables
+// Variables, mixins, extends
 
-// Color
+// Colors
 $primary: #4ceea7;
 $secondary: #effdf3;
 $accent: #fdfa69;
@@ -11,12 +11,11 @@ $white: #fafafa;
 $lgFont: 'Playfair Display', serif;
 $smFont: 'Roboto', sans-serif;
 
-// transition
+// transitions
 $transitionDetails: 0.3s ease-in-out;
 
-
 // Variables for media query
-$bp-xs: 320px; //mobile
+$bp-xs: 320px; 
 $bp-sm: 645px;
 $bp-md: 760px;
 $bp-lg: 960px; 
@@ -54,7 +53,7 @@ $bp-xxl: 1440px;
   }
 }
 
-// Extend
+// Extends
 %hover {
   box-shadow: 1.5px 1.5px 5px darken($black, 40%);
   background-color: $accent;
@@ -68,7 +67,7 @@ $bp-xxl: 1440px;
   transform: translate(-50%, -50%);
 }
 
-%boxShadowL {
+%boxShadowR {
   box-shadow: 15px 15px $accent;
 
   @include bp(sm) {
@@ -76,10 +75,15 @@ $bp-xxl: 1440px;
   }
 }
 
-%boxShadowR {
+%boxShadowL {
   box-shadow: -15px 15px $accent;
 
   @include bp(sm) {
     box-shadow: -30px 30px $accent;
   }
+}
+
+%bgDetails {
+  background-repeat: no-repeat;
+  background-size: cover;
 }

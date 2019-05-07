@@ -1,5 +1,8 @@
 // Typography
 
+// Very general Typography
+// For page-specific styles, go to each page styles
+
 html {
   font-size: 125%; /*20px*/
 }
@@ -23,6 +26,8 @@ input[type="submit"]  {
   text-transform: uppercase;
 }
 
+//h1 is styled on each page due to its responsiveness
+
 h2 {
   font-size: 2.1rem;
 }
@@ -36,6 +41,8 @@ h3,
   font-size: 1.6rem;
   letter-spacing: 1px;
 }
+
+//h4 is styled on blog.scss, because it is only used on the page.
 
 a {
     color: $black;
@@ -51,10 +58,9 @@ p {
   font-weight: normal;
 }
 
+//This is for link titles and comment titles
+// They are not headings but has visual appearance of headings.
 [class*="Title"] {
   font-size: 1.6rem;
 }
 
-.sideBarPopUp li {
-  font-family: $smFont;
-}

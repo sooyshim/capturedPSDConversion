@@ -1,12 +1,14 @@
-// contact styles
+// contact page styles
 
+//------------------------------------------------------------
 //header styles
 .contactHeader {
-  background-image: url('../assets/contactHeader.jpg');
-  background-size: cover;
-  background-position: 30% center;
   position: relative;
+  background-image: url('../assets/contactHeader.jpg');
+  background-position: 30% center;
+  @extend %bgDetails;
 
+  //h1 style
   h1 {
     position:absolute;
     top: 30%;
@@ -14,6 +16,7 @@
     width: 100%;
     font-size: 3.0rem;
 
+    //media query
     @include bp(md) {
       font-size: 4.0rem;
       line-height: 4.6rem;
@@ -21,117 +24,8 @@
   }
 }
 
-// main styles
-.contact {
-  background-color: $secondary;
+// layout flex box media query
 
-  padding-top: 30px;
-
-  @include bp(lg) {
-    padding: 0;
-  }
-}
-
-//form styles
-// For general form styles, go to components.scss
-.contactForm {
-  border: 20px solid $accent;
-  border-top: none;
-  border-right: none;
-  padding: 20px 20px 20px 10px;
-  background-color: $white;
-
-  @include bp(lg) {
-    padding: 15px;
-    border: 30px solid $accent;
-    border-top: none;
-    border-right: none; 
-    position: relative;
-    top: -150px;
-  }
-
-  @include bp(xlg) {
-    padding: 50px;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    margin-bottom: 35px;
-  }
-}
-
-//name & email flex box
-.contactContainer {
-  @include bp(sm) {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  input[type="text"],
-  input[type="email"] {
-    @include bp(sm) {
-      flex-basis: 45%;
-    }
-  }
-}
-
-//aside: socialMedia & contact styles
-
-//social media links
-.socialMedia ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 50px;
-
-  width: 70%;
-
-  //media query
-  @include bp(sm) {
-    width: 50%;
-  }
-
-  li {
-    flex: 1 0 auto;
-    transition: all $transitionDetails;
-
-    &:hover a {
-      color: $primary;
-      text-shadow: 1px 1px 1px $black;
-      transform: scale(1.2);
-    }
-  }
-}
-
-// address style
-.socialMedia a,
-address p:first-of-type {
-  font-size: 1.3rem;
-  margin: 5px 0;
-}
-
-address p:first-of-type {
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
-  font-family: $lgFont;
-}
-
-address {
-  font-style: normal;
-
-  p:last-of-type {
-    margin-bottom: 0;
-    padding-bottom: 30px;
-  }
-}
-
-.emailAddress:hover {
-  color: $primary;
-  text-shadow: 2px 1px 1px $black;
-}
-
-// layout flex media query
 .contact {
   .wrapper {
     @include bp(lg) {
@@ -157,3 +51,126 @@ address {
     }
   }
 }
+
+//------------------------------------------------------------
+// main styles
+.contact {
+  padding-top: 30px;
+  background-color: $secondary;
+
+  //media query
+  @include bp(lg) {
+    padding: 0;
+  }
+}
+
+//------------------------------------------------------------
+//form styles
+//for general form styles, go to components.scss
+.contactForm {
+  border: 20px solid $accent;
+  border-top: none;
+  border-right: none;
+  padding: 20px 20px 20px 10px;
+  background-color: $white;
+
+  //media query
+  @include bp(lg) {
+    position: relative;
+    top: -150px;
+    padding: 15px;
+    border: 30px solid $accent;
+    border-top: none;
+    border-right: none; 
+  }
+
+  @include bp(xlg) {
+    padding: 50px;
+  }
+
+  //form general style
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    margin-bottom: 35px;
+  }
+}
+
+//name & email flex box
+.contactContainer {
+
+  @include bp(sm) {
+    //flex container
+    display: flex;
+    justify-content: space-between;
+  }
+
+  //flex items
+  input[type="text"],
+  input[type="email"] {
+    @include bp(sm) {
+      flex-basis: 45%;
+    }
+  }
+}
+
+//------------------------------------------------------------
+//aside: socialMedia & contact styles
+
+//social media links
+.socialMedia ul {
+  //flex container
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  padding-top: 50px;
+
+  //media query
+  @include bp(sm) {
+    width: 50%;
+  }
+}
+
+.socialMedia ul li {
+  flex: 1 0 auto;
+  transition: all $transitionDetails;
+
+  &:hover a {
+    color: $primary;
+    text-shadow: 1px 1px 1px $black;
+    transform: scale(1.2);
+  }
+}
+
+// icon & email styles
+.socialMedia a,
+address p:first-of-type {
+  font-size: 1.3rem;
+  margin: 5px 0;
+}
+
+//email styles
+address p:first-of-type {
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  font-family: $lgFont;
+
+  &:hover {
+    color: $primary;
+    text-shadow: 2px 1px 1px $black;
+  }
+}
+
+
+//address styles
+address {
+  font-style: normal;
+
+  p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+  }
+}
+
+
