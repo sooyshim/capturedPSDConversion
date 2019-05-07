@@ -2,7 +2,7 @@
 
 //header styles
 .contactHeader {
-  background-image: url('../assets/contact-header.jpg');
+  background-image: url('../assets/contactHeader.jpg');
   background-size: cover;
   background-position: 30% center;
   position: relative;
@@ -134,7 +134,6 @@ address {
 // layout flex media query
 .contact {
   .wrapper {
-    border: 1px solid #000;
     @include bp(lg) {
       display: flex;
       flex-direction: row-reverse;

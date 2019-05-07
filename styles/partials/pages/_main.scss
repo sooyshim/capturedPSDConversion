@@ -25,7 +25,7 @@
 // header styles
 // nav is styled in the header.scss
 .mainHeader {
-  background: url('../assets/header-image.jpg');
+  background: url('../assets/headerImage.jpg');
   background-position: 40% center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,7 +58,7 @@
   width: 45%;
   border: 20px solid $accent;
   border-right: none;
-  background: url('../assets/header-box-image.jpg');
+  background: url('../assets/headerBoxImage.jpg');
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-size: cover;
@@ -134,7 +134,7 @@
 
 .feature1 {
   .imgContainer { 
-    background-image: url('../assets/left-image.jpg');
+    background-image: url('../assets/leftImage.jpg');
     @extend %boxShadowL;
     height: 250px;
     width: 100%;
@@ -175,7 +175,7 @@
   
   .imgContainer {
     @extend %boxShadowR;
-    background-image: url('../assets/right-image.jpg');
+    background-image: url('../assets/rightImage.jpg');
     height: 250px;
     width: 100%;
     margin-top: 50px;
