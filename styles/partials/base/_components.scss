@@ -53,6 +53,24 @@ input[type="email"] {
   }
 }
 
+//name & email flex box
+.contactContainer {
+
+  @include bp(sm) {
+    //flex container
+    display: flex;
+    justify-content: space-between;
+  }
+
+  //flex items
+  input[type="text"],
+  input[type="email"] {
+    @include bp(sm) {
+      flex-basis: 45%;
+    }
+  }
+}
+
 textarea {
   width: 100%;
   border: 2px solid $primary;

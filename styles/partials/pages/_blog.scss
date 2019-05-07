@@ -132,7 +132,7 @@ label.sideToggle {
 }
 
 //find out more link
-a[href="index.html"] {
+.sideBarContent a[href="index.html"] {
   display: inline-block;
   margin-left: 3px;
   font-family: $lgFont;

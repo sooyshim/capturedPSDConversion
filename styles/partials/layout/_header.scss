@@ -1,5 +1,6 @@
-// Header styles
+// header styles
 
+//------------------------------------------------------------
 //general styles
 .mainHeader,
 .blogHeader,
@@ -9,19 +10,13 @@
   background-size: cover;
 }
 
-header .wrapper {
-  height: 100vh;
-}
 
-h1 {
-  text-align: center;
-
-}
-
+//------------------------------------------------------------
 // navigation styles
 .mainNav {
   position: relative;
 
+  //media query
   @include bp(sm) {
     position: static;
     display: flex; //flex container
@@ -29,9 +24,12 @@ h1 {
   }
 }
 
+//toggle effect set ups
 input[class="toggle"] {
   opacity: 0;
 
+  //media query
+  //remove dropdown nav
   @include bp(sm) {
     display: none;
   }
@@ -47,6 +45,8 @@ label.toggle {
     font-size: 1.7rem;
   }
 
+  //media query
+  //remove dropdown nav
   @include bp(sm) {
     display: none;
   }
@@ -54,26 +54,28 @@ label.toggle {
 
 //drop down nav styles
 .navList {
+  position: relative;
   width: 100%;
   margin-top: 20px;
   border: 2px dotted $black;
   border-bottom: none;
-  position: relative;
   background-color: $primary;
   text-align: center;
   z-index: 100;
+  transition: opacity $transitionDetails;
   opacity: 0;
-  transition: all $transitionDetails;
   
+  //media query
   @include bp(sm) {
     width: 75%;
-    border: none;
     display: flex; //flex container
     justify-content: flex-end;
+    border: none;
     background-color: transparent;
     opacity: 1;
   }
 
+  //regular nav styles
   @include bp(md) {
     width: 60%;
   }
@@ -86,15 +88,15 @@ label.toggle {
     width: 30%;
     transform: translateX(-15%);
   }
- 
 }
 
+//li styles
 .navList li {
   padding: 30px 0;
   border-bottom: 2px dotted $black;
   
   @include bp(sm) {
-    border: none ;
+    border: none;
     flex: 1 0 25%; //flex item of ul.navList
   }
 
@@ -102,17 +104,17 @@ label.toggle {
     background-color: $accent;
 
     @include bp(sm) {
-      background-color: transparent;
       position: relative;
+      background-color: transparent;
     }
   }
+}
 
+.navList li a {
   @include bp(sm) {
-    a {
-      position: relative;
-    }
-
-    a::after {
+  position: relative;
+    
+    &::after {
       content: '';
       position: absolute;
       bottom: -7px;
@@ -125,7 +127,7 @@ label.toggle {
       transition: 0.5s linear;
     }
 
-    a:hover::after {
+    &:hover::after {
       visibility: visible;
       transform: scaleX(1);
     }
@@ -135,10 +137,13 @@ label.toggle {
 //toggle effect styles
 input[class="toggle"]:checked + .navList {
   opacity: 1;
+}
 
+input[class="toggle"],
+label[class="toggle"] {
   @include bp(sm) {
     opacity: 0;
     display: none;
   }
 }
-
+ 

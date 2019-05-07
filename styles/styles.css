@@ -210,6 +210,9 @@ input[type="submit"] {
   font-style: italic;
   text-transform: uppercase; }
 
+h1 {
+  text-align: center; }
+
 h2 {
   font-size: 2.1rem; }
 
@@ -273,6 +276,16 @@ input[type="email"] {
     input[type="email"] {
       padding: 0 0 20px 20px; } }
 
+@media (min-width: 645px) {
+  .contactContainer {
+    display: flex;
+    justify-content: space-between; } }
+
+@media (min-width: 645px) {
+  .contactContainer input[type="text"],
+  .contactContainer input[type="email"] {
+    flex-basis: 45%; } }
+
 textarea {
   width: 100%;
   border: 2px solid #4ceea7;
@@ -293,12 +306,6 @@ input[type="submit"] {
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover; }
-
-header .wrapper {
-  height: 100vh; }
-
-h1 {
-  text-align: center; }
 
 .mainNav {
   position: relative; }
@@ -326,22 +333,22 @@ label.toggle {
       display: none; } }
 
 .navList {
+  position: relative;
   width: 100%;
   margin-top: 20px;
   border: 2px dotted #2c2c2c;
   border-bottom: none;
-  position: relative;
   background-color: #4ceea7;
   text-align: center;
   z-index: 100;
-  opacity: 0;
-  transition: all 0.3s ease-in-out; }
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0; }
   @media (min-width: 645px) {
     .navList {
       width: 75%;
-      border: none;
       display: flex;
       justify-content: flex-end;
+      border: none;
       background-color: transparent;
       opacity: 1; } }
   @media (min-width: 760px) {
@@ -366,11 +373,12 @@ label.toggle {
     background-color: #fdfa69; }
     @media (min-width: 645px) {
       .navList li:hover {
-        background-color: transparent;
-        position: relative; } }
-  @media (min-width: 645px) {
-    .navList li a {
-      position: relative; }
+        position: relative;
+        background-color: transparent; } }
+
+@media (min-width: 645px) {
+  .navList li a {
+    position: relative; }
     .navList li a::after {
       content: '';
       position: absolute;
@@ -388,10 +396,12 @@ label.toggle {
 
 input[class="toggle"]:checked + .navList {
   opacity: 1; }
-  @media (min-width: 645px) {
-    input[class="toggle"]:checked + .navList {
-      opacity: 0;
-      display: none; } }
+
+@media (min-width: 645px) {
+  input[class="toggle"],
+  label[class="toggle"] {
+    opacity: 0;
+    display: none; } }
 
 footer {
   background: #2c2c2c;
@@ -783,11 +793,11 @@ label.sideToggle {
         .sideBarPopUp h4:first-child + p {
           margin-bottom: 50px; } }
 
-a[href="index.html"] {
+.sideBarContent a[href="index.html"] {
   display: inline-block;
   margin-left: 3px;
   font-family: "Playfair Display", serif; }
-  a[href="index.html"]:hover {
+  .sideBarContent a[href="index.html"]:hover {
     color: #0e9359; }
 
 .recentPosts a {
