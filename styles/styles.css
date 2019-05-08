@@ -330,7 +330,8 @@ label.toggle {
   top: 0;
   margin-top: 10px; }
   label.toggle i {
-    font-size: 1.7rem; }
+    font-size: 1.7rem;
+    margin-right: 5px; }
   @media (min-width: 645px) {
     label.toggle {
       display: none; } }
@@ -423,7 +424,7 @@ footer p {
 .moreInfo,
 .monthlyProfile {
   padding: 20px 0 50px;
-  background: #effdf3; }
+  background-color: #effdf3; }
   @media (min-width: 645px) {
     .about,
     .moreInfo,
@@ -432,7 +433,7 @@ footer p {
 
 .mainHeader {
   position: relative;
-  background: url("../assets/headerImage.jpg");
+  background-image: url("../assets/headerImage.jpg");
   background-position: 40% center; }
   .mainHeader h1 {
     position: absolute;
@@ -464,7 +465,7 @@ footer p {
   position: absolute;
   right: 0;
   bottom: -7%;
-  background: url("../assets/headerBoxImage.jpg");
+  background-image: url("../assets/headerBoxImage.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 100%; }
@@ -480,7 +481,8 @@ footer p {
       border-right: none; } }
 
 .about {
-  padding-top: 40px;
+  padding-top: 40px 0;
+  margin-bottom: 40px;
   background-color: #effdf3; }
   @media (min-width: 645px) {
     .about {
@@ -514,27 +516,27 @@ footer p {
       display: flex;
       flex-direction: column; } }
 
-@media (min-width: 960px) {
-  .feature1 {
-    padding-bottom: 10%; } }
-
 .feature1 .wrapper {
-  padding-top: 60%; }
+  padding-top: 47%; }
+  @media (min-width: 645px) {
+    .feature1 .wrapper {
+      padding-top: 55%; } }
+  @media (min-width: 760px) {
+    .feature1 .wrapper {
+      padding-top: 55%; } }
   @media (min-width: 960px) {
     .feature1 .wrapper {
       padding-top: 0;
       padding-left: 50%; } }
 
 .feature1 img {
-  top: -30px;
+  top: -60px;
   left: 0;
   box-shadow: 16px 15px #fdfa69; }
   @media (min-width: 645px) {
     .feature1 img {
+      top: -70px;
       box-shadow: 30px 30px #fdfa69; } }
-  @media (min-width: 960px) {
-    .feature1 img {
-      top: -30px; } }
 
 @media (min-width: 960px) {
   .feature2 {
@@ -542,10 +544,16 @@ footer p {
 
 .feature2 .wrapper {
   padding-top: 60%; }
+  @media (min-width: 645px) {
+    .feature2 .wrapper {
+      padding-top: 65%; } }
   @media (min-width: 960px) {
     .feature2 .wrapper {
-      padding-top: 0;
+      padding-top: 6%;
       padding-right: 50%; } }
+  @media (min-width: 1440px) {
+    .feature2 .wrapper {
+      padding-top: 10%; } }
 
 .feature2 img {
   right: 0;
@@ -751,16 +759,20 @@ footer p {
 input.sideToggle {
   opacity: 0; }
 
-@media (min-width: 960px) {
-  label.sideToggle {
-    display: none;
-    padding: 0; } }
-
-label.sideToggle i {
-  color: #4ceea7;
-  font-size: 2.4rem; }
-  label.sideToggle i:hover {
-    color: #2c2c2c; }
+label.sideToggle {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; }
+  @media (min-width: 960px) {
+    label.sideToggle {
+      display: none;
+      padding: 0; } }
+  label.sideToggle i {
+    color: #2c2c2c;
+    font-size: 2.4rem;
+    margin-right: 5px; }
+    label.sideToggle i:hover {
+      color: #4ceea7; }
 
 .sideBarPopUp {
   position: absolute;

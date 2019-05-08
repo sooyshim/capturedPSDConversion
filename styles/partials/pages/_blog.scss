@@ -51,6 +51,9 @@ input.sideToggle {
 }
 
 label.sideToggle {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
   //media query
   @include bp(lg) {
     display: none;
@@ -58,11 +61,12 @@ label.sideToggle {
   }
 
   i {
-    color: $primary;
+    color: $black;
     font-size: 2.4rem;
+    margin-right: 5px;
 
     &:hover {
-      color: $black;
+      color: $primary;
     }
   }
 }
