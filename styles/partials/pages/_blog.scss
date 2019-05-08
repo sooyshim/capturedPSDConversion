@@ -21,7 +21,6 @@
   position: relative;
   background-image: url('../assets/blogHeader.jpg');
   background-position: 30% center;
-  @extend %bgDetails;
 }
 
 .blogHeader h1 {
@@ -200,6 +199,7 @@ input.sideToggle:checked + .sideBarPopUp {
 }
 // blog post
 .blogPost {
+  position: relative;
   //media query
   @include bp(lg) {
    position: relative;
@@ -235,10 +235,15 @@ input.sideToggle:checked + .sideBarPopUp {
 
 //blog post image
 .post .imgContainer {
+  padding-top: 68%;
+  width: 100%;
   background-color: $accent;
 
   img {
-    transform:translate(6%, -10%);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 90%;
   }
 }
 

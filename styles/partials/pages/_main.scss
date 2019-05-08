@@ -33,7 +33,6 @@
   position: relative;
   background: url('../assets/headerImage.jpg');
   background-position: 40% center;
-  @extend %bgDetails;
 
   h1 {
     position: absolute;
@@ -63,6 +62,9 @@
     }
   }
 }  
+
+// h2 and h3 are styled in typography. 
+// Assumption: there may be more h2 and h3 in the future
 
 //deco image on the right
 .decoImgContainer {
@@ -126,110 +128,66 @@
 
 //------------------------------------------------------------
 // features section styles
+
 .feature {
-  margin-bottom: 40px; 
+  margin-bottom: 50px;
 
   //media query
   @include bp(lg) {
     padding-bottom: 30px;
+    margin-bottom:0;
+    position: relative;
+    //flex container
+    display: flex;
+    justify-content: space-between;
   }
 
-  //wrapper media query
-  //flex container
-  .wrapper {
+  img {
     @include bp(lg) {
-      display: flex;
-      justify-content: space-between;
-    }
+      width: 45%;
+      position: absolute;
+    } 
   }
 
-  //flex item1: imgContainer
-  .imgContainer {
-    height: 250px;
-    width: 100%;
-    margin-top: 50px;
-    @extend %bgDetails;
-
-    //media query
-    @include bp(md) {
-      height: 350px;;
-    }
-
-    @include bp(lg) {
-      position: relative;
-      flex-basis: 47%;
-      width: 50%;
-      height: auto;
-    }
-  }
-
-  //flex item2: content
-  .featureContent {
-    @include bp(lg) {
-      flex-basis: 46%;
-    }
-  }
 }
 
 // feature1 (top part of features section)
 .feature1 {
-  //imgContainer: media query
-  .imgContainer {   
-    background-image: url('../assets/leftImage.jpg');
-    @extend %boxShadowR;
-    
-    //media query
+  //flex item1: wrapper
+  .wrapper{
     @include bp(lg) {
-      left: -5.65%;
-      top: -80px;
+      padding-left:50%;
     }
   }
-  
-  //content: media query
-  .featureContent {
+
+  //flex item2: img
+  img {
+    @extend %boxShadowR;
     @include bp(lg) {
-      margin-left: 70px;
-      padding-left: 20px;
-    }
-    
-    @include bp(xlg) {
-      padding: 50px 27px;
+      left: 0;
+      top: -30px;
     }
   }
 }
 
 // feature2 (bottom part of features section)
 .feature2 {
-  //wrapper media query
+  //flex item1: wrapper
   .wrapper {
     @include bp(lg) {
-      flex-direction: row-reverse;
+      padding-right: 50%;
     }
   }
-  
-  //imgContainer: media query
-  .imgContainer {
+
+  //flex item2: img
+  img {
     @extend %boxShadowL;
-    margin-top: 50px;
-    background-image: url('../assets/rightImage.jpg');
-    
-    @include bp(lg) {    
-      right: -5.65%;
-      bottom: -90px;
-    }
-  }
-
-  //content: media query
-  .featureContent {
-
     @include bp(lg) {
-      padding-right: 20px;
-    }
-
-    @include bp(xlg) {
-      padding: 50px 27px;
+     right: 0;
+     bottom: -40px;
     }
   }
+
 }
 
 //------------------------------------------------------------
@@ -338,7 +296,7 @@
 .info p {
   margin-bottom: 50px; 
   font-style: normal;
-
+  margin-left: 55px;
   //media query
   @include bp(md) {
     margin-left: 50px;
@@ -355,7 +313,8 @@
   display: none;
   background-image: url('../assets/banner.jpg');
   background-position: center center;
-  @extend %bgDetails;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   //media query
   @include bp(lg) {

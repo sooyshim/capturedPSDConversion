@@ -111,6 +111,10 @@ label.toggle {
 }
 
 .navList li a {
+  text-align: center;  
+  line-height: 1.45rem;
+  letter-spacing: 1px;
+  
   @include bp(sm) {
   position: relative;
     

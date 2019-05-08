@@ -33,6 +33,7 @@ h1 {
 
 h2 {
   font-size: 2.1rem;
+  letter-spacing: 1px;
 }
 
 h3,
@@ -45,7 +46,13 @@ h3,
   letter-spacing: 1px;
 }
 
-//h4 is styled on blog.scss, because it is only used on the page.
+//h4 is styled on blog.scss, because it is only used on the page in a side bar.
+
+//This is for link titles and comment titles
+// They are not headings but has visual appearance of headings.
+[class*="Title"] {
+  font-size: 1.6rem;
+}
 
 a {
     color: $black;
@@ -57,13 +64,9 @@ form {
 }
 
 p {
-  line-height: 1.6;
+  line-height: 1.6rem;
   font-weight: normal;
 }
 
-//This is for link titles and comment titles
-// They are not headings but has visual appearance of headings.
-[class*="Title"] {
-  font-size: 1.6rem;
-}
+
 

@@ -6,7 +6,6 @@
   position: relative;
   background-image: url('../assets/contactHeader.jpg');
   background-position: 30% center;
-  @extend %bgDetails;
 
   //h1 style
   h1 {
@@ -15,11 +14,11 @@
     left: 0;
     width: 100%;
     font-size: 3.0rem;
+    line-height: 4.6rem;
 
     //media query
     @include bp(md) {
-      font-size: 4.0rem;
-      line-height: 4.6rem;
+      line-height: 4.0rem;
     }
   }
 }
@@ -96,23 +95,6 @@
   }
 }
 
-//name & email flex box
-.contactContainer {
-
-  @include bp(sm) {
-    //flex container
-    display: flex;
-    justify-content: space-between;
-  }
-
-  //flex items
-  input[type="text"],
-  input[type="email"] {
-    @include bp(sm) {
-      flex-basis: 45%;
-    }
-  }
-}
 
 //------------------------------------------------------------
 //aside: socialMedia & contact styles
@@ -152,13 +134,13 @@ address p:first-of-type {
 
 //email styles
 address p:first-of-type {
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-family: $lgFont;
 
-  &:hover {
+  a:hover {
     color: $primary;
-    text-shadow: 2px 1px 1px $black;
+    text-shadow: 2px 1px $black;
   }
 }
 

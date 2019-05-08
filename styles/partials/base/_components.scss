@@ -4,12 +4,20 @@
 
 //------------------------------------------------------------
 // Buttons
+
+//Find out more & Read more buttons
 .linkButton {
-  padding: 15px;
+  padding: 10px;
   background: $primary;
   text-align: center;
-  font-size: 1.6rem;
   letter-spacing: 1px;
+  line-height: 1.6rem;
+  font-size: 1.2rem;
+
+  @include bp(lg) {
+    padding: 15px;
+    font-size: 1.6rem;
+  }
 
   &:hover {
     @extend %hover;
@@ -17,12 +25,20 @@
 }
 
 .findOutMore {
-  width: 320px;
   margin: 0 auto;
+  width: 250px;
+
+  @include bp(lg) {
+    width: 320px;
+  }
 }
 
 .readMore {
-  width: 270px;
+  width: 190px;
+
+  @include bp(lg) {
+    width: 270px;
+  }
 }
 
 //------------------------------------------------------------
@@ -81,11 +97,14 @@ textarea {
   }
 }
 
+// submit button 
 input[type="submit"] {
   width: 100%;
   padding: 10px 0;
   border: none;
   background-color: $primary;
+  line-height: 1.6rem;
+  letter-spacing: 1px;
 
   &:hover {
     @extend %hover;
