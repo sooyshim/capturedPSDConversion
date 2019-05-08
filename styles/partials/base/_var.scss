@@ -55,7 +55,7 @@ $bp-xxl: 1440px;
 
 // Extends
 %hover {
-  box-shadow: 1.5px 1.5px 5px darken($black, 40%);
+  box-shadow: 1.5px 1.5px 1px darken($black, 40%);
   background-color: $accent;
   color: $black;
 }
@@ -65,20 +65,4 @@ $bp-xxl: 1440px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
-
-%boxShadowR {
-  box-shadow: 15px 15px $accent;
-
-  @include bp(sm) {
-    box-shadow: 30px 30px $accent;
-  }
-}
-
-%boxShadowL {
-  box-shadow: -15px 15px $accent;
-
-  @include bp(sm) {
-    box-shadow: -30px 30px $accent;
-  }
 }

@@ -15,17 +15,6 @@
   }
 }
 
-// heading styles
-.mainPage {
-  h3 {
-    margin-top: 30px;
-
-    @include bp(sm) {
-      margin-top: 50px;
-    }
-  }
-}
-
 //------------------------------------------------------------
 // header styles
 // nav is styled in the header.scss
@@ -84,7 +73,7 @@
   
   //media query
   @include bp(sm) {
-    bottom: -20%;
+    bottom: -10%;
     border: 30px solid $accent;
     border-right: none;
   }
@@ -104,11 +93,11 @@
 
   //media query
   @include bp(sm) {
-    padding-top: 130px;
+    padding-top: 100px;
   }
 
   @include bp(lg) {
-    padding: 250px 50px;  
+    padding: 250px 50px 150px;  
   }
 
   //p tag media query
@@ -131,40 +120,61 @@
 
 .feature {
   margin-bottom: 50px;
+  position: relative;
 
   //media query
   @include bp(lg) {
-    padding-bottom: 30px;
     margin-bottom:0;
-    position: relative;
     //flex container
     display: flex;
     justify-content: space-between;
   }
 
   img {
+    width: 95%;
+    position: absolute;
+
     @include bp(lg) {
       width: 45%;
-      position: absolute;
     } 
   }
+
+ .featureContent {
+   @include bp(lg) {
+     display: flex;
+     flex-direction: column;
+   }
+ }
 
 }
 
 // feature1 (top part of features section)
 .feature1 {
+  @include bp(lg) {
+    padding-bottom: 10%;
+  }
+
   //flex item1: wrapper
   .wrapper{
+    padding-top: 60%;
+
     @include bp(lg) {
+      padding-top: 0;
       padding-left:50%;
     }
   }
 
   //flex item2: img
   img {
-    @extend %boxShadowR;
+    top: -30px;
+    left: 0;
+    box-shadow: 16px 15px $accent;
+
+    @include bp(sm) {
+      box-shadow: 30px 30px $accent;
+    }
+
     @include bp(lg) {
-      left: 0;
       top: -30px;
     }
   }
@@ -172,22 +182,37 @@
 
 // feature2 (bottom part of features section)
 .feature2 {
+  @include bp(lg) {
+    padding-bottom: 50px;
+  }
   //flex item1: wrapper
   .wrapper {
+    padding-top: 60%;
+
     @include bp(lg) {
+      padding-top: 0;
       padding-right: 50%;
     }
   }
-
   //flex item2: img
   img {
-    @extend %boxShadowL;
+    right: 0;
+    box-shadow: -16px 15px $accent;
+
+    @include bp(sm) {
+      box-shadow: -30px 30px $accent;
+    }
+
     @include bp(lg) {
-     right: 0;
      bottom: -40px;
     }
   }
 
+  .featureContent {
+    @include bp(lg) {
+      align-items: flex-end;
+    }  
+  }
 }
 
 //------------------------------------------------------------
@@ -326,6 +351,9 @@
 // month profile styles
 
 .monthlyProfile {
+  h3 {
+    margin-top: 40px;
+  }
   .wrapper {
     //media query
     //flex box
@@ -339,7 +367,7 @@
   //img media query
   //flex item1
   img {
-    @extend %boxShadowL;
+    box-shadow: 16px 15px $accent;
     width: 70%;
     height: 70%;
     margin: 0 auto;
@@ -347,6 +375,7 @@
     @include bp(lg) {
       flex-basis: 30%;
       margin-right: 60px;
+      box-shadow: 30px 30px $accent;
     }
 
     @include bp(xlg) {

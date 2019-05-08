@@ -51,18 +51,6 @@ input.sideToggle {
 }
 
 label.sideToggle {
-  margin: 0 auto;
-  padding: 10px;
-  width: 100%;
-  background-color: $primary;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  font-family: $lgFont;
-  text-align: center;
-  color: $black;
-  
-  display: block;
-
   //media query
   @include bp(lg) {
     display: none;
@@ -70,9 +58,13 @@ label.sideToggle {
   }
 
   i {
-    text-shadow: 0.5px 0.5px px $black;
-  }
+    color: $primary;
+    font-size: 2.4rem;
 
+    &:hover {
+      color: $black;
+    }
+  }
 }
 
 //side bar content style
@@ -130,28 +122,28 @@ label.sideToggle {
   }
 }
 
-//find out more link
-.sideBarContent a[href="index.html"] {
+//find out more link & recent posts unordered list
+
+.sideBarContent a[href="index.html"],
+.recentPosts a {
   display: inline-block;
-  margin-left: 3px;
-  font-family: $lgFont;
 
   &:hover {
-    color: darken($primary, 30%);
+    color: darken($primary, 20%);
   }
+}
+
+.sideBarContent a[href="index.html"] {
+  margin-left: 3px;
+  font-family: $lgFont;
 }
 
 // content2: recent posts styles
 .recentPosts a {
-  display: inline-block;
   font-family: $smFont;
   text-transform: none;
   font-weight: normal;
   font-style: normal;
-
-  &:hover {
-    color: darken($primary, 30%);
-  }
 }
 
 // side bar: toggle effect
@@ -171,7 +163,6 @@ input.sideToggle:checked + .sideBarPopUp {
 }
 
 //------------------------------------------------------------
-
 // flex box layout for media query
 
 //flex container
@@ -197,6 +188,8 @@ input.sideToggle:checked + .sideBarPopUp {
     }
   }
 }
+
+//------------------------------------------------------------
 // blog post
 .blogPost {
   position: relative;
@@ -206,7 +199,6 @@ input.sideToggle:checked + .sideBarPopUp {
    top: -150px;
   }
 }
-
 
 //blog post content
 .post {
@@ -234,16 +226,20 @@ input.sideToggle:checked + .sideBarPopUp {
 }
 
 //blog post image
-.post .imgContainer {
+.imgContainer {
   padding-top: 68%;
   width: 100%;
   background-color: $accent;
 
   img {
     position: absolute;
-    top: -50px;
     right: 0;
+    top: -20px;
     width: 90%;
+
+    @include bp(lg) {
+      top: -50px;
+    }
   }
 }
 

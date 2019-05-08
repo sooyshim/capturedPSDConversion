@@ -9,9 +9,7 @@
 
   //h1 style
   h1 {
-    position:absolute;
-    top: 30%;
-    left: 0;
+    @extend %centerElement;
     width: 100%;
     font-size: 3.0rem;
     line-height: 4.6rem;
@@ -93,6 +91,17 @@
   textarea {
     margin-bottom: 35px;
   }
+
+  .contactContainer {
+    @include bp(lg) {
+      display: block;
+    }
+
+    @include bp(xlg) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 
@@ -127,23 +136,22 @@
 
 // icon & email styles
 .socialMedia a,
-address p:first-of-type {
+address a {
   font-size: 1.3rem;
   margin: 5px 0;
 }
 
 //email styles
-address p:first-of-type {
+address a {
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: $lgFont;
 
-  a:hover {
+  &:hover {
     color: $primary;
     text-shadow: 2px 1px $black;
   }
 }
-
 
 //address styles
 address {
