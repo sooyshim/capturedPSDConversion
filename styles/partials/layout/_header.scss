@@ -24,7 +24,7 @@
 }
 
 //toggle effect set ups
-input[class="toggle"] {
+input[type=checkbox] {
   opacity: 0;
 
   //media query
@@ -139,12 +139,12 @@ label.toggle {
 } 
 
 //toggle effect styles
-input[class="toggle"]:checked + .navList {
+input[type=checkbox]:checked + .navList {
   opacity: 1;
 }
 
-input[class="toggle"],
-label[class="toggle"] {
+input[type=checkbox],
+label[type=checkbox] {
   @include bp(sm) {
     opacity: 0;
     display: none;
